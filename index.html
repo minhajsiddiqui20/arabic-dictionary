@@ -115,7 +115,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 110px; /* Base width for each selector */
+            width: 120px; /* Increased width for each selector */
         }
         
         .letter-label {
@@ -129,7 +129,7 @@
         .letter-wheel {
             position: relative;
             height: 150px;
-            width: 90px; /* Base width for the wheel */
+            width: 100px; /* Increased width for the wheel */
             overflow: hidden;
             border-radius: 15px;
             background: white;
@@ -234,7 +234,7 @@
         
         .verb-form {
             flex: 1; /* Allows flex items to grow and shrink */
-            min-width: 200px; /* Minimum width before wrapping */
+            min-width: 200px; /* Base minimum width */
             background: white;
             border-radius: 15px;
             padding: 18px;
@@ -391,11 +391,11 @@
             }
             
             .letter-selector {
-                width: 95px; /* Adjusted width for mobile letter selectors */
+                width: 100px; /* Adjusted width for mobile letter selectors (slightly wider) */
             }
             
             .letter-wheel {
-                width: 80px; /* Adjusted width for mobile letter wheels */
+                width: 90px; /* Adjusted width for mobile letter wheels (slightly wider) */
                 height: 130px; /* Adjusted height for mobile letter wheels */
             }
             
@@ -417,8 +417,15 @@
                 height: 70px;
             }
             
+            .verb-forms {
+                /* To make them 2 per row on mobile */
+                gap: 10px; /* Adjusted gap for 2-column layout */
+            }
+
             .verb-form {
-                min-width: 100%; /* Forces verb forms to stack vertically */
+                /* Calculate width for 2 columns with a gap */
+                flex: 0 0 calc(50% - 5px); /* 50% width minus half the gap on each side */
+                min-width: unset; /* Remove min-width to allow flex-basis to control size */
             }
             
             #searchBtn {
@@ -751,7 +758,7 @@
             const wheel = document.getElementById(`letter${position}`);
         
             wheel.addEventListener('wheel', (e) => {
-                e.preventDefault();
+                e.preventDefault(); // Prevent page scroll
                 const direction = e.deltaY > 0 ? 1 : -1;
                 changeLetter(position, direction);
             });
@@ -766,8 +773,8 @@
             });
         
             wheel.addEventListener('touchmove', (e) => {
+                e.preventDefault(); // Prevent page scroll during touchmove
                 if (!isSwiping) return; // Only process if a swipe might be happening
-                e.preventDefault();
                 const touchY = e.touches[0].clientY;
                 // Adjust sensitivity for smoother single-letter changes
                 if (Math.abs(touchY - touchStartY) > 30) { // Threshold for a significant swipe
