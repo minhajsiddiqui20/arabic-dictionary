@@ -115,7 +115,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 120px; /* Increased width for each selector */
+            width: 120px; /* Increased width for each selector (as per previous request) */
         }
         
         .letter-label {
@@ -129,7 +129,7 @@
         .letter-wheel {
             position: relative;
             height: 150px;
-            width: 100px; /* Increased width for the wheel */
+            width: 100px; /* Increased width for the wheel (as per previous request) */
             overflow: hidden;
             border-radius: 15px;
             background: white;
@@ -385,17 +385,28 @@
                 padding: 10px; /* Reduce overall padding on very small screens */
             }
 
+            /* Header adjustments */
+            .header {
+                padding: 15px; /* Reduced header padding */
+            }
+            .app-title {
+                font-size: 1.5rem; /* Smaller title font */
+            }
+            .app-subtitle {
+                font-size: 0.85rem; /* Smaller subtitle font */
+            }
+            
             .letter-selectors {
                 gap: 8px; /* Reduce gap between letter wheels */
                 padding: 15px 10px; /* Adjust padding for selectors container */
             }
             
             .letter-selector {
-                width: 100px; /* Adjusted width for mobile letter selectors (slightly wider) */
+                width: 100px; /* Retained previous adjustment */
             }
             
             .letter-wheel {
-                width: 90px; /* Adjusted width for mobile letter wheels (slightly wider) */
+                width: 90px; /* Retained previous adjustment */
                 height: 130px; /* Adjusted height for mobile letter wheels */
             }
             
@@ -412,25 +423,55 @@
                 font-size: 1.1rem; /* Smaller font for labels */
             }
             
+            /* Root word display adjustments */
+            .root-display {
+                padding: 10px; /* Reduced padding */
+            }
             .root-word {
-                font-size: 2.8rem; /* Smaller font for root word display */
-                height: 70px;
-            }
-            
-            .verb-forms {
-                /* To make them 2 per row on mobile */
-                gap: 10px; /* Adjusted gap for 2-column layout */
-            }
-
-            .verb-form {
-                /* Calculate width for 2 columns with a gap */
-                flex: 0 0 calc(50% - 5px); /* 50% width minus half the gap on each side */
-                min-width: unset; /* Remove min-width to allow flex-basis to control size */
+                font-size: 2.2rem; /* Smaller font for root word display */
+                height: 50px; /* Reduced height */
             }
             
             #searchBtn {
                 padding: 14px 30px 14px 25px; /* Adjust button padding */
                 font-size: 1.1rem; /* Smaller font for search button */
+            }
+
+            /* Verb Forms Display (Results) adjustments */
+            .verb-forms {
+                flex-wrap: nowrap; /* Prevent wrapping to force 1 row */
+                overflow-x: auto; /* Enable horizontal scrolling if content overflows */
+                -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+                scrollbar-width: none; /* Hide scrollbar for Firefox */
+                padding: 8px; /* Reduced padding */
+                gap: 5px; /* Reduced gap to fit 4 in a row */
+                justify-content: flex-start; /* Align items to start for horizontal scroll */
+            }
+
+            .verb-forms::-webkit-scrollbar {
+                display: none; /* Hide scrollbar for Webkit browsers */
+            }
+            
+            .verb-form {
+                flex: 0 0 calc(25% - 3.75px); /* Calculate width for 4 columns with 5px gap */
+                min-width: 80px; /* Set a minimum width for each box to ensure visibility */
+                padding: 10px 5px; /* Reduced padding for smaller boxes */
+            }
+            
+            .verb-title {
+                display: none; /* Hide titles */
+            }
+            .verb-word {
+                font-size: 1.5rem; /* Smaller font for verb words */
+                height: 40px; /* Reduced height */
+            }
+
+            .dictionary-btn-container {
+                padding: 10px 20px 15px; /* Reduced padding for the button container */
+            }
+            #dictionaryBtn {
+                padding: 10px 25px; /* Reduced padding for the button */
+                font-size: 1rem; /* Smaller font for the button */
             }
 
             .modal-body {
