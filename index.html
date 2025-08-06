@@ -151,7 +151,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 120px; /* Retained width */
+            width: 120px;
         }
         
         .letter-label {
@@ -164,8 +164,8 @@
         
         .letter-wheel {
             position: relative;
-            height: 180px; /* Increased height of the scrolling box */
-            width: 100px; /* Retained width */
+            height: 180px;
+            width: 100px;
             overflow: hidden;
             border-radius: 15px;
             background: white;
@@ -176,14 +176,14 @@
         .letter-option {
             position: absolute;
             width: 100%;
-            height: 60px; /* Increased height of each letter option */
+            height: 60px;
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 2.5rem;
             font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;
             color: #1a472a;
-            transition: all 0.1s ease-out; /* Faster transition for smoother scroll */
+            transition: all 0.1s ease-out;
             opacity: 0.3;
             transform: scale(0.8);
             user-select: none;
@@ -212,13 +212,13 @@
         /* Root Word Display */
         .root-display {
             padding: 15px;
-            background: #fff; /* White background for highlight */
+            background: #fff;
             text-align: center;
             border-top: 1px solid #d4e8da;
             border-bottom: 1px solid #d4e8da;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for highlight */
-            margin: 0 20px; /* Horizontal margin */
-            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            margin: 0 20px;
+            border-radius: 10px;
         }
         
         .root-word {
@@ -485,12 +485,12 @@
             }
             
             .letter-wheel {
-                height: 150px; /* Adjusted height for mobile */
+                height: 150px;
                 width: 90px;
             }
             
             .letter-option {
-                height: 50px; /* Adjusted height for mobile */
+                height: 50px;
                 font-size: 2rem;
             }
             
@@ -995,33 +995,49 @@
             const rootWord = document.getElementById('rootWord').textContent;
             const dictionaryModalBody = document.querySelector('#dictionaryModal .modal-body');
         
-            if (dictionaryContent[rootWord]) {
-                dictionaryModalBody.innerHTML = dictionaryContent[rootWord];
-            } else {
-                // Fallback for other root words
-                dictionaryModalBody.innerHTML = `
-                    <p style="text-align: center; margin-bottom: 20px;">
-                        <strong style="font-size: 1.5rem; color: #1a472a; font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;">
-                            ${rootWord}
-                        </strong>
-                    </p>
-                    <p>Full dictionary entry will appear here.</p>
-                    <p>This popup will show detailed information about the selected root word, including:</p>
-                    <ul>
-                        <li>Etymology and origin</li>
-                        <li>All verb forms and conjugations</li>
-                        <li>Noun forms and derivatives</li>
-                        <li>Usage in the Qur'an with references</li>
-                        <li>Meanings and interpretations</li>
-                    </ul>
-                    <p>You can close this window and return to the main dictionary interface.</p>
-                    <p style="margin-top: 20px;">
-                        <strong style="color: #d9534f;">Note:</strong> Detailed content for this root word is not yet available.
-                    </p>
-                `;
-            }
-        
-            document.getElementById('dictionaryModal').style.display = 'flex';
+            // Check if a specific HTML file exists for this root word
+            // This assumes your dictionary pages are in a folder named 'dictionary_pages'
+            // and are named like 'سمع.html', 'كتب.html', etc.
+            const specificPageUrl = `dictionary_pages/${rootWord}.html`;
+            
+            fetch(specificPageUrl)
+                .then(response => {
+                    if (response.ok) {
+                        // If the specific page exists, redirect to it
+                        window.location.href = specificPageUrl;
+                    } else {
+                        // If the specific page does NOT exist, use the content from dictionaryContent (if available)
+                        // or fall back to the generic placeholder in the modal.
+                        if (dictionaryContent[rootWord]) {
+                            dictionaryModalBody.innerHTML = dictionaryContent[rootWord];
+                        } else {
+                            dictionaryModalBody.innerHTML = `
+                                <p style="text-align: center; margin-bottom: 20px;">
+                                    <strong style="font-size: 1.5rem; color: #1a472a; font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;">
+                                        ${rootWord}
+                                    </strong>
+                                </p>
+                                <p>Detailed content for this root word is not yet available.</p>
+                                <p>Please check back later or contribute to expand the dictionary!</p>
+                            `;
+                        }
+                        // Display the modal if no specific page was found
+                        document.getElementById('dictionaryModal').style.display = 'flex';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error checking dictionary page:', error);
+                    // Fallback to modal if fetch fails due to network or other issues
+                    dictionaryModalBody.innerHTML = `
+                        <p style="text-align: center; margin-bottom: 20px;">
+                            <strong style="font-size: 1.5rem; color: #1a472a; font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;">
+                                ${rootWord}
+                            </strong>
+                        </p>
+                        <p>Could not load dictionary content. Please check your internet connection or try again later.</p>
+                    `;
+                    document.getElementById('dictionaryModal').style.display = 'flex';
+                });
         }
         
         // Open video modal
