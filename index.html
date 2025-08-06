@@ -16,13 +16,13 @@
         }
         
         body {
-            background: #f8faf7;
+            background: #f8faf7; /* Original light grey background */
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             padding: 20px; /* Ample padding around the container */
-            color: #333;
+            color: #333; /* Dark text color */
         }
         
         .container {
@@ -32,12 +32,12 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            border: 4px solid #1d5e38; /* Green border matching header color */
-            box-shadow: 0 10px 30px rgba(29, 94, 56, 0.15); /* Subtle green shadow */
+            border: 4px solid #1d5e38; /* Original green border matching header color */
+            box-shadow: 0 10px 30px rgba(29, 94, 56, 0.15); /* Original subtle green shadow */
         }
         
         .header {
-            background: linear-gradient(to right, #1d5e38, #2e8b57);
+            background: linear-gradient(to right, #1d5e38, #2e8b57); /* Original green gradient */
             padding: 25px;
             text-align: center;
             position: relative;
@@ -74,6 +74,13 @@
             color: rgba(255, 255, 255, 0.85);
             font-weight: 500;
         }
+
+        .app-description {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 10px;
+            line-height: 1.4;
+        }
         
         /* Video Button */
         .video-btn {
@@ -108,19 +115,19 @@
             justify-content: center;
             gap: 15px; /* Space between letter wheels */
             padding: 20px;
-            background: #f8f9fa;
+            background: #f8f9fa; /* Original off-white background */
         }
         
         .letter-selector {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 120px; /* Increased width for each selector (as per previous request) */
+            width: 120px; /* Retained width */
         }
         
         .letter-label {
             font-size: 1.2rem;
-            color: #1a472a;
+            color: #1a472a; /* Original darker green text */
             margin-bottom: 15px;
             font-weight: 600;
             font-family: 'Noto Naskh Arabic', serif;
@@ -129,12 +136,12 @@
         .letter-wheel {
             position: relative;
             height: 150px;
-            width: 100px; /* Increased width for the wheel (as per previous request) */
+            width: 100px; /* Retained width */
             overflow: hidden;
             border-radius: 15px;
             background: white;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            border: 2px solid #d4e8da;
+            border: 2px solid #d4e8da; /* Original lighter green border */
         }
         
         .letter-option {
@@ -146,8 +153,8 @@
             align-items: center;
             font-size: 2.5rem;
             font-family: 'Noto Naskh Arabic', serif;
-            color: #1a472a;
-            transition: all 0.3s ease;
+            color: #1a472a; /* Original darker green text */
+            transition: all 0.1s ease-out; /* Faster transition for smoother scroll */
             opacity: 0.3;
             transform: scale(0.8);
             user-select: none;
@@ -165,7 +172,7 @@
             z-index: 3;
             font-weight: bold;
             font-size: 3rem;
-            color: #1a472a;
+            color: #1a472a; /* Original darker green text */
         }
         
         .letter-option.next {
@@ -176,16 +183,16 @@
         /* Root Word Display */
         .root-display {
             padding: 15px;
-            background: #e6f4ea;
+            background: #e6f4ea; /* Original very light green background */
             text-align: center;
-            border-top: 1px solid #d4e8da;
-            border-bottom: 1px solid #d4e8da;
+            border-top: 1px solid #d4e8da; /* Original lighter green border */
+            border-bottom: 1px solid #d4e8da; /* Original lighter green border */
         }
         
         .root-word {
             font-size: 3.5rem;
             font-family: 'Noto Naskh Arabic', serif;
-            color: #1a472a;
+            color: #1a472a; /* Original darker green text */
             font-weight: bold;
             height: 80px;
             display: flex;
@@ -193,16 +200,19 @@
             align-items: center;
         }
         
-        /* Search Button */
+        /* Search and Dictionary Buttons */
         .controls {
+            display: flex; /* Use flexbox for buttons */
+            justify-content: space-around; /* Space them out evenly */
+            gap: 10px; /* Gap between buttons */
             padding: 15px 20px 10px;
-            text-align: center;
-            background: #f8f9fa;
+            background: #f8f9fa; /* Original off-white background */
         }
         
-        #searchBtn {
-            padding: 16px 50px 16px 40px;
-            background: #1a472a;
+        #searchBtn, #dictionaryBtn {
+            flex: 1; /* Make buttons take equal space */
+            padding: 16px 20px; /* Adjusted padding */
+            background: #1a472a; /* Original dark green background */
             color: white;
             border: none;
             border-radius: 50px;
@@ -210,23 +220,24 @@
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(26, 71, 42, 0.3);
+            box-shadow: 0 4px 12px rgba(26, 71, 42, 0.3); /* Original green shadow */
             display: inline-flex;
             align-items: center;
+            justify-content: center; /* Center content within button */
             gap: 10px;
         }
         
-        #searchBtn:hover {
-            background: #2e8b57;
+        #searchBtn:hover, #dictionaryBtn:hover {
+            background: #2e8b57; /* Original medium green on hover */
             transform: translateY(-2px);
         }
-        
+
         /* Verb Forms Display */
         .verb-forms {
             display: flex;
             flex-wrap: wrap; /* Allows items to wrap to next line on small screens */
             padding: 15px;
-            background: #f8f9fa;
+            background: #f8f9fa; /* Original off-white background */
             gap: 12px;
             justify-content: center;
             margin-top: -5px;
@@ -240,12 +251,12 @@
             padding: 18px;
             text-align: center;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
-            border: 2px solid #d4e8da;
+            border: 2px solid #d4e8da; /* Original lighter green border */
         }
         
         .verb-title {
             font-size: 1rem;
-            color: #1a472a;
+            color: #1a472a; /* Original darker green text */
             margin-bottom: 12px;
             font-weight: 600;
         }
@@ -253,7 +264,7 @@
         .verb-word {
             font-size: 2.2rem;
             font-family: 'Noto Naskh Arabic', serif;
-            color: #1a472a;
+            color: #1a472a; /* Original darker green text */
             font-weight: bold;
             height: 60px;
             display: flex;
@@ -261,34 +272,9 @@
             align-items: center;
         }
         
-        /* Open Dictionary Button */
+        /* Open Dictionary Button Container (now part of .controls) */
         .dictionary-btn-container {
-            padding: 15px 20px 20px;
-            text-align: center;
-            background: #f8f9fa;
-            border-top: 1px solid #e6ece8;
-        }
-        
-        #dictionaryBtn {
-            padding: 13px 35px;
-            background: #1a472a;
-            color: white;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin: 0 auto;
-        }
-        
-        #dictionaryBtn:hover {
-            background: #2e8b57;
-            transform: translateY(-2px);
+            display: none; /* Hidden as buttons are merged into .controls */
         }
         
         /* Popup Modal */
@@ -317,7 +303,7 @@
         }
         
         .modal-header {
-            background: linear-gradient(to right, #1a472a, #2e8b57);
+            background: linear-gradient(to right, #1a472a, #2e8b57); /* Original green gradient */
             padding: 20px;
             color: white;
             font-size: 1.5rem;
@@ -370,13 +356,33 @@
         .video-placeholder i {
             font-size: 4rem;
             margin-bottom: 20px;
-            color: #2e8b57;
+            color: #2e8b57; /* Original medium green icon */
         }
         
         .video-placeholder p {
             font-size: 1.2rem;
             text-align: center;
             max-width: 80%;
+        }
+
+        /* Footer Links */
+        .footer-links {
+            padding: 15px 20px;
+            background: #f8f9fa; /* Original off-white background */
+            text-align: center;
+            border-top: 1px solid #e6ece8; /* Original lighter border */
+        }
+
+        .footer-links a {
+            color: #1a472a; /* Original darker green link color */
+            text-decoration: none;
+            font-weight: 600;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #2e8b57; /* Original medium green on hover */
         }
         
         /* Mobile Responsiveness: Styles applied when screen width is 480px or less */
@@ -394,6 +400,9 @@
             }
             .app-subtitle {
                 font-size: 0.85rem; /* Smaller subtitle font */
+            }
+            .app-description {
+                font-size: 0.8rem; /* Smaller description font */
             }
             
             .letter-selectors {
@@ -432,30 +441,28 @@
                 height: 50px; /* Reduced height */
             }
             
-            #searchBtn {
-                padding: 14px 30px 14px 25px; /* Adjust button padding */
-                font-size: 1.1rem; /* Smaller font for search button */
+            /* Button adjustments */
+            .controls {
+                padding: 10px; /* Reduced padding for button container */
+                gap: 8px; /* Reduced gap between buttons */
+            }
+            #searchBtn, #dictionaryBtn {
+                padding: 12px 15px; /* Reduced padding for buttons */
+                font-size: 1rem; /* Smaller font for buttons */
             }
 
             /* Verb Forms Display (Results) adjustments */
             .verb-forms {
-                flex-wrap: nowrap; /* Prevent wrapping to force 1 row */
-                overflow-x: auto; /* Enable horizontal scrolling if content overflows */
-                -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-                scrollbar-width: none; /* Hide scrollbar for Firefox */
-                padding: 8px; /* Reduced padding */
-                gap: 5px; /* Reduced gap to fit 4 in a row */
-                justify-content: flex-start; /* Align items to start for horizontal scroll */
-            }
-
-            .verb-forms::-webkit-scrollbar {
-                display: none; /* Hide scrollbar for Webkit browsers */
+                flex-wrap: wrap; /* Allow wrapping for 2x2 grid */
+                overflow-x: hidden; /* Prevent horizontal scrolling */
+                padding: 10px; /* Adjusted padding */
+                gap: 8px; /* Adjusted gap for 2x2 grid */
             }
             
             .verb-form {
-                flex: 0 0 calc(25% - 3.75px); /* Calculate width for 4 columns with 5px gap */
-                min-width: 80px; /* Set a minimum width for each box to ensure visibility */
-                padding: 10px 5px; /* Reduced padding for smaller boxes */
+                flex: 0 0 calc(50% - 4px); /* Calculate width for 2 columns with 8px gap */
+                min-width: unset; /* Remove min-width to allow flex-basis to control size */
+                padding: 10px; /* Reduced padding for smaller boxes */
             }
             
             .verb-title {
@@ -464,14 +471,6 @@
             .verb-word {
                 font-size: 1.5rem; /* Smaller font for verb words */
                 height: 40px; /* Reduced height */
-            }
-
-            .dictionary-btn-container {
-                padding: 10px 20px 15px; /* Reduced padding for the button container */
-            }
-            #dictionaryBtn {
-                padding: 10px 25px; /* Reduced padding for the button */
-                font-size: 1rem; /* Smaller font for the button */
             }
 
             .modal-body {
@@ -503,6 +502,7 @@
             </div>
             <h1 class="app-title">Digital Qur'anic Dictionary</h1>
             <p class="app-subtitle">By Late Lutfur Rahman Khan Sb</p>
+            <p class="app-description">This digital dictionary is free of cost for the purpose of sadaqah-e-jariyah (continuous charity).</p>
         </div>
         
         <!-- Arabic Letter Selectors - ف كلمة on the right -->
@@ -534,11 +534,15 @@
             <div class="root-word" id="rootWord">فعل</div>
         </div>
         
-        <!-- Search Button -->
+        <!-- Search and Dictionary Buttons -->
         <div class="controls">
             <button id="searchBtn">
                 <i class="fas fa-search"></i>
                 Search
+            </button>
+            <button id="dictionaryBtn">
+                <i class="fas fa-book"></i>
+                Dictionary
             </button>
         </div>
         
@@ -565,12 +569,10 @@
             </div>
         </div>
         
-        <!-- Open Dictionary Button -->
-        <div class="dictionary-btn-container">
-            <button id="dictionaryBtn">
-                <i class="fas fa-book"></i>
-                Open in Dictionary
-            </button>
+        <!-- Footer Links -->
+        <div class="footer-links">
+            <a href="#" id="fourHuroofLink">Words with 4 Huroof</a>
+            <a href="#" id="notesLink">Important Notes</a>
         </div>
     </div>
     
@@ -800,8 +802,10 @@
         
             wheel.addEventListener('wheel', (e) => {
                 e.preventDefault(); // Prevent page scroll
-                const direction = e.deltaY > 0 ? 1 : -1;
-                changeLetter(position, direction);
+                const scrollAmount = Math.round(e.deltaY / 20); // Adjust sensitivity here
+                if (scrollAmount !== 0) {
+                    changeLetter(position, scrollAmount);
+                }
             });
             
             // Touch support for mobile
@@ -817,10 +821,11 @@
                 e.preventDefault(); // Prevent page scroll during touchmove
                 if (!isSwiping) return; // Only process if a swipe might be happening
                 const touchY = e.touches[0].clientY;
-                // Adjust sensitivity for smoother single-letter changes
-                if (Math.abs(touchY - touchStartY) > 30) { // Threshold for a significant swipe
-                    const direction = touchY > touchStartY ? -1 : 1; // Invert direction for intuitive swipe
-                    changeLetter(position, direction);
+                const swipeDistance = touchY - touchStartY;
+                const scrollAmount = Math.round(swipeDistance / 20); // Adjust sensitivity here
+                
+                if (scrollAmount !== 0) {
+                    changeLetter(position, -scrollAmount); // Negative because swiping down is positive deltaY, but moves to next letter (positive index)
                     touchStartY = touchY; // Reset start for continuous swipe
                 }
             });
@@ -831,8 +836,8 @@
         }
         
         // Change letter in selector
-        function changeLetter(position, direction) {
-            selectedLetters[position - 1] = (selectedLetters[position - 1] + direction + arabicLetters.length) % arabicLetters.length;
+        function changeLetter(position, amount) {
+            selectedLetters[position - 1] = (selectedLetters[position - 1] + amount + arabicLetters.length * Math.abs(amount)) % arabicLetters.length;
             updateLetterSelector(position);
             updateRootWord();
         }
