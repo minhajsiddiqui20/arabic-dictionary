@@ -164,7 +164,7 @@
         
         .letter-wheel {
             position: relative;
-            height: 180px;
+            height: 180px; /* Increased height of the scrolling box */
             width: 100px;
             overflow: hidden;
             border-radius: 15px;
@@ -176,7 +176,7 @@
         .letter-option {
             position: absolute;
             width: 100%;
-            height: 60px;
+            height: 60px; /* Increased height of each letter option */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -276,7 +276,7 @@
         }
         
         .verb-form {
-            flex: 0 0 calc(50% - 6px);
+            flex: 0 0 calc(50% - 6px); /* This ensures 2 boxes per row on larger screens */
             min-width: 180px;
             background: white;
             border-radius: 15px;
@@ -485,12 +485,12 @@
             }
             
             .letter-wheel {
-                height: 150px;
+                height: 150px; /* Adjusted height for mobile */
                 width: 90px;
             }
             
             .letter-option {
-                height: 50px;
+                height: 50px; /* Adjusted height for mobile */
                 font-size: 2rem;
             }
             
@@ -524,17 +524,18 @@
 
             /* Verb Forms Display (Results) adjustments for 2x2 grid */
             .verb-forms {
-                gap: 8px;
+                gap: 8px; /* Adjusted gap for mobile 2x2 grid */
                 padding: 10px;
             }
             
             .verb-form {
-                flex: 0 0 calc(50% - 4px);
+                flex: 0 0 calc(50% - 4px); /* This ensures 2 boxes per row on mobile */
+                min-width: unset; /* Allows flex-basis to control width */
                 padding: 10px;
             }
             
             .verb-title {
-                display: none;
+                display: none; /* Hide titles on mobile */
             }
             .verb-word {
                 font-size: 1.5rem;
