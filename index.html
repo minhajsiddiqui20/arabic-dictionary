@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Qur'anic Dictionary</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Updated Arabic font to Droid Arabic Naskh -->
+    <link href="https://fonts.googleapis.com/css2?family=Droid+Arabic+Naskh:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         /* Base styles for all screen sizes */
@@ -108,6 +110,33 @@
             color: white;
             font-size: 1.2rem;
         }
+
+        /* Info Button (New) */
+        .info-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px; /* Positioned on the left */
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .info-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+        
+        .info-btn i {
+            color: white;
+            font-size: 1.2rem;
+        }
         
         /* Arabic Letter Selectors */
         .letter-selectors {
@@ -130,7 +159,7 @@
             color: #1a472a; /* Original darker green text */
             margin-bottom: 15px;
             font-weight: 600;
-            font-family: 'Noto Naskh Arabic', serif;
+            font-family: 'Droid Arabic Naskh', 'Noto Naskh Arabic', serif; /* Changed font */
         }
         
         .letter-wheel {
@@ -152,7 +181,7 @@
             justify-content: center;
             align-items: center;
             font-size: 2.5rem;
-            font-family: 'Noto Naskh Arabic', serif;
+            font-family: 'Droid Arabic Naskh', 'Noto Naskh Arabic', serif; /* Changed font */
             color: #1a472a; /* Original darker green text */
             transition: all 0.1s ease-out; /* Faster transition for smoother scroll */
             opacity: 0.3;
@@ -183,15 +212,18 @@
         /* Root Word Display */
         .root-display {
             padding: 15px;
-            background: #e6f4ea; /* Original very light green background */
+            background: #fff; /* Changed to white */
             text-align: center;
             border-top: 1px solid #d4e8da; /* Original lighter green border */
             border-bottom: 1px solid #d4e8da; /* Original lighter green border */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for highlight */
+            margin: 0 20px; /* Add some horizontal margin */
+            border-radius: 10px; /* Rounded corners */
         }
         
         .root-word {
             font-size: 3.5rem;
-            font-family: 'Noto Naskh Arabic', serif;
+            font-family: 'Droid Arabic Naskh', 'Noto Naskh Arabic', serif; /* Changed font */
             color: #1a472a; /* Original darker green text */
             font-weight: bold;
             height: 80px;
@@ -263,7 +295,7 @@
         
         .verb-word {
             font-size: 2.2rem;
-            font-family: 'Noto Naskh Arabic', serif;
+            font-family: 'Droid Arabic Naskh', 'Noto Naskh Arabic', serif; /* Changed font */
             color: #1a472a; /* Original darker green text */
             font-weight: bold;
             height: 60px;
@@ -365,19 +397,51 @@
             max-width: 80%;
         }
 
+        /* Info Modal Specific Styles (New) */
+        .info-modal-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .info-modal-text {
+            text-align: center;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .info-modal-text strong {
+            color: #333;
+        }
+
+        .info-modal-text a {
+            color: #1a472a;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .info-modal-text a:hover {
+            text-decoration: underline;
+        }
+
         /* Footer Links */
         .footer-links {
             padding: 15px 20px;
             background: #f8f9fa; /* Original off-white background */
             text-align: center;
             border-top: 1px solid #e6ece8; /* Original lighter border */
+            display: flex; /* Use flexbox for spacing */
+            justify-content: center;
+            gap: 30px; /* Increased gap between links */
         }
 
         .footer-links a {
             color: #1a472a; /* Original darker green link color */
             text-decoration: none;
             font-weight: 600;
-            margin: 0 10px;
             transition: color 0.3s ease;
         }
 
@@ -405,6 +469,17 @@
                 font-size: 0.8rem; /* Smaller description font */
             }
             
+            /* Button adjustments in header */
+            .video-btn, .info-btn {
+                width: 35px;
+                height: 35px;
+                top: 10px;
+                right: 10px; /* Adjusted position */
+            }
+            .info-btn {
+                left: 10px; /* Adjusted position */
+            }
+
             .letter-selectors {
                 gap: 8px; /* Reduce gap between letter wheels */
                 padding: 15px 10px; /* Adjust padding for selectors container */
@@ -435,6 +510,7 @@
             /* Root word display adjustments */
             .root-display {
                 padding: 10px; /* Reduced padding */
+                margin: 0 10px; /* Reduced horizontal margin */
             }
             .root-word {
                 font-size: 2.2rem; /* Smaller font for root word display */
@@ -488,6 +564,10 @@
                 top: 10px;
                 right: 15px;
             }
+
+            .footer-links {
+                gap: 15px; /* Adjust gap for mobile */
+            }
         }
     </style>
 </head>
@@ -496,6 +576,9 @@
         <div class="header">
             <button class="video-btn" id="videoBtn">
                 <i class="fas fa-play"></i>
+            </button>
+            <button class="info-btn" id="infoBtn">
+                <i class="fas fa-question"></i>
             </button>
             <div class="logo-container">
                 <img src="https://khuddam.co.nz/images/old-logo-border.png" alt="Logo">
@@ -612,6 +695,53 @@
         </div>
     </div>
 
+    <!-- Info Popup Modal (New) -->
+    <div class="modal" id="infoModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                About This Dictionary
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="https://raw.githubusercontent.com/minhajsiddiqui20/arabic-dictionary/refs/heads/main/QuranicDictionary.jpg" alt="Quranic Dictionary Cover" class="info-modal-image">
+                <p class="info-modal-text">
+                    <strong>KHUDDAM-UL-QURAN NZ © 2021</strong><br>
+                    This dictionary was written by Lutfur Rahman Sb (late) and published by Al Balagh Foundation, Lahore, Pakistan. For the sake of Allah (SWT), Khuddam-ul-Quran NZ has endeavoured to digitise it for the benefit of all Arabic grammar students, enabling a quick search for the meanings of Qur’anic words. Alhamdulillah. May Allah (SWT) accept our efforts. Ameen.<br>
+                    For feedback <a href="mailto:khudaamulqurannz@gmail.com">click here</a><br>
+                    khudaamulqurannz@gmail.com
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4 Huroof Words Popup Modal (New) -->
+    <div class="modal" id="fourHuroofModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                Words with 4 Huroof
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>This is a placeholder page for "Words with 4 Huroof".</p>
+                <p>You can add detailed content here later regarding words with four root letters.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Important Notes Popup Modal (New) -->
+    <div class="modal" id="notesModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                Important Notes
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>This is a placeholder page for "Important Notes".</p>
+                <p>You can add important information, grammar rules, or usage tips here later.</p>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Arabic letters array
         const arabicLetters = [
@@ -689,8 +819,8 @@
         // Custom dictionary content for specific root words
         const dictionaryContent = {
             "سمع": `
-                <h2 style="font-family: 'Noto Naskh Arabic', serif; text-align: right; margin-bottom: 20px;">67- س م ع</h2>
-                <p style="font-family: 'Noto Naskh Arabic', serif; font-size: 1.2rem; text-align: right; margin-bottom: 15px;">
+                <h2 style="font-family: 'Droid Arabic Naskh', 'Noto Naskh Arabic', serif; text-align: right; margin-bottom: 20px;">67- س م ع</h2>
+                <p style="font-family: 'Droid Arabic Naskh', 'Noto Naskh Arabic', serif; font-size: 1.2rem; text-align: right; margin-bottom: 15px;">
                     <strong>يَسْمَعُ</strong> – To hear, to listen, to respond to a call.
                 </p>
                 <p style="text-align: right; margin-bottom: 15px;">
@@ -700,36 +830,36 @@
                     <strong>اسْمَعُوا</strong> – (Al-Baqarah: 93) "And they took the calf (for worship) and listened to it for worship."
                 </p>
                 
-                <p style="font-family: 'Noto Naskh Arabic', serif; font-size: 1.2rem; text-align: right; margin-bottom: 15px;">
+                <p style="font-family: 'Droid Arabic Naskh', 'Noto Naskh Arabic', serif; font-size: 1.2rem; text-align: right; margin-bottom: 15px;">
                     <strong>سَمِيعٌ</strong> – This is a word for the active participle (اسم الفاعل) from the weight of (فَعِيلٌ). It is used to describe Allah.
                 </p>
                 <p style="text-align: right; margin-bottom: 20px;">
                     <strong>وَاِنَّ اللّهَ سَمِيْعٌ عَلِيْمٌ</strong> – (Al-Baqarah: 127) "And indeed, Allah is All-Hearing, All-Knowing."
                 </p>
                 
-                <p style="font-family: 'Noto Naskh Arabic', serif; font-size: 1.2rem; text-align: right; margin-bottom: 15px;">
+                <p style="font-family: 'Droid Arabic Naskh', 'Noto Naskh Arabic', serif; font-size: 1.2rem; text-align: right; margin-bottom: 15px;">
                     <strong>سَمَّاعٌ</strong> – This is a superlative form of (سَمِيعٌ). It means one who hears a lot, or someone who is very obedient.
                 </p>
                 <p style="text-align: right; margin-bottom: 20px;">
                     (Al-Tawbah: 47) "And they are spies among you."
                 </p>
                 
-                <h3 style="font-family: 'Noto Naskh Arabic', serif; text-align: right; margin-top: 30px; margin-bottom: 15px; color: #1a472a;">بَابُ أَفْعَلَ:</h3>
-                <p style="font-family: 'Noto Naskh Arabic', serif; font-size: 1.2rem; text-align: right; margin-bottom: 15px;">
+                <h3 style="font-family: 'Droid Arabic Naskh', 'Noto Naskh Arabic', serif; text-align: right; margin-top: 30px; margin-bottom: 15px; color: #1a472a;">بَابُ أَفْعَلَ:</h3>
+                <p style="font-family: 'Droid Arabic Naskh', 'Noto Naskh Arabic', serif; font-size: 1.2rem; text-align: right; margin-bottom: 15px;">
                     <strong>أَسْمِعْ</strong> – To make someone hear, to cause to hear.
                 </p>
                 <p style="text-align: right; margin-bottom: 15px;">
                     <strong>وَاِذَا لَا سَمِعَ الْحَقُّ الَّذِيْنَ أَنَزَلْنَا</strong> – (Al-A'raf: 202) "And when those whom We sent down the truth did not hear." This means they did not understand or obey.
                 </p>
-                <p style="font-family: 'Noto Naskh Arabic', serif; font-size: 1.2rem; text-align: right; margin-bottom: 15px;">
+                <p style="text-align: right; margin-bottom: 20px;">
                     <strong>يُسْمِعُ</strong> – This is the active participle (اسم الفاعل).
                 </p>
                 <p style="text-align: right; margin-bottom: 20px;">
                     <strong>وَمَا أَنْتَ بِمُسْمِعٍ مَنْ فِي الْقُبُورِ</strong> – (Al-Fatir: 22) "And you cannot make those in the graves hear." This means you cannot make them understand or obey.
                 </p>
         
-                <h3 style="font-family: 'Noto Naskh Arabic', serif; text-align: right; margin-top: 30px; margin-bottom: 15px; color: #1a472a;">بَابُ تَفَعَّلَ:</h3>
-                <p style="font-family: 'Noto Naskh Arabic', serif; font-size: 1.2rem; text-align: right; margin-bottom: 15px;">
+                <h3 style="font-family: 'Droid Arabic Naskh', 'Noto Naskh Arabic', serif; text-align: right; margin-top: 30px; margin-bottom: 15px; color: #1a472a;">بَابُ تَفَعَّلَ:</h3>
+                <p style="text-align: right; margin-bottom: 15px;">
                     <strong>يَسْتَمِعُ</strong> – To listen carefully, to pay attention.
                 </p>
                 <p style="text-align: right; margin-bottom: 15px;">
@@ -739,8 +869,8 @@
                     <strong>وَمَا كَانَ اللَّهُ لِيُضِيعَ الْاِسْمَاعَكُمْ</strong> – (Al-Baqarah: 143) "And Allah would not waste your hearing." This means He would not waste your prayers or your obedience.
                 </p>
         
-                <h3 style="font-family: 'Noto Naskh Arabic', serif; text-align: right; margin-top: 30px; margin-bottom: 15px; color: #1a472a;">بَابُ افْتَعَلَ:</h3>
-                <p style="font-family: 'Noto Naskh Arabic', serif; font-size: 1.2rem; text-align: right; margin-bottom: 15px;">
+                <h3 style="font-family: 'Droid Arabic Naskh', 'Noto Naskh Arabic', serif; text-align: right; margin-top: 30px; margin-bottom: 15px; color: #1a472a;">بَابُ افْتَعَلَ:</h3>
+                <p style="font-family: 'Droid Arabic Naskh', 'Noto Naskh Arabic', serif; font-size: 1.2rem; text-align: right; margin-bottom: 15px;">
                     <strong>اسْتَمِعْ</strong> – To listen attentively, to seek to hear.
                 </p>
                 <p style="text-align: right; margin-bottom: 15px;">
@@ -749,7 +879,7 @@
                 <p style="text-align: right; margin-bottom: 20px;">
                     <strong>وَلَوْ كَانُوا خَيْرًا وَلَوْ كَانُوا بَاسْلًا فَلَيَسْمَعُونَ</strong> – (Al-Anfal: 20-21) "And if they were good and brave, they would have listened." This means they would have listened to the Quran and remained silent.
                 </p>
-                <p style="font-family: 'Noto Naskh Arabic', serif; font-size: 1.2rem; text-align: right; margin-bottom: 15px;">
+                <p style="font-align: right; margin-bottom: 15px;">
                     <strong>اسْمَاعٌ</strong> – This is the active participle (اسم الفاعل).
                 </p>
                 <p style="text-align: right;">
@@ -879,7 +1009,7 @@
                 // Fallback for other root words
                 dictionaryModalBody.innerHTML = `
                     <p style="text-align: center; margin-bottom: 20px;">
-                        <strong style="font-size: 1.5rem; color: #1a472a; font-family: 'Noto Naskh Arabic', serif;">
+                        <strong style="font-size: 1.5rem; color: #1a472a; font-family: 'Droid Arabic Naskh', 'Noto Naskh Arabic', serif;">
                             ${rootWord}
                         </strong>
                     </p>
@@ -906,17 +1036,39 @@
         function openVideo() {
             document.getElementById('videoModal').style.display = 'flex';
         }
+
+        // Open info modal (New)
+        function openInfo() {
+            document.getElementById('infoModal').style.display = 'flex';
+        }
+
+        // Open 4 Huroof modal (New)
+        function openFourHuroof() {
+            document.getElementById('fourHuroofModal').style.display = 'flex';
+        }
+
+        // Open notes modal (New)
+        function openNotes() {
+            document.getElementById('notesModal').style.display = 'flex';
+        }
         
         // Close modals
         function closeModal() {
             document.getElementById('dictionaryModal').style.display = 'none';
             document.getElementById('videoModal').style.display = 'none';
+            document.getElementById('infoModal').style.display = 'none'; // Close info modal
+            document.getElementById('fourHuroofModal').style.display = 'none'; // Close 4 Huroof modal
+            document.getElementById('notesModal').style.display = 'none'; // Close notes modal
         }
         
         // Event Listeners
         document.getElementById('searchBtn').addEventListener('click', searchVerb);
         document.getElementById('dictionaryBtn').addEventListener('click', openDictionary);
         document.getElementById('videoBtn').addEventListener('click', openVideo);
+        document.getElementById('infoBtn').addEventListener('click', openInfo); // New info button listener
+        document.getElementById('fourHuroofLink').addEventListener('click', (e) => { e.preventDefault(); openFourHuroof(); }); // New 4 Huroof link listener
+        document.getElementById('notesLink').addEventListener('click', (e) => { e.preventDefault(); openNotes(); }); // New notes link listener
+
         document.querySelectorAll('.close-modal').forEach(btn => {
             btn.addEventListener('click', closeModal);
         });
