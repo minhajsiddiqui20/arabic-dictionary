@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Qur'anic Dictionary</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Updated Arabic font to Droid Arabic Naskh -->
+    <!-- Droid Arabic Naskh font import -->
     <link href="https://fonts.googleapis.com/css2?family=Droid+Arabic+Naskh:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -18,28 +18,28 @@
         }
         
         body {
-            background: #f8faf7; /* Original light grey background */
+            background: #f8faf7;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px; /* Ample padding around the container */
-            color: #333; /* Dark text color */
+            padding: 20px;
+            color: #333;
         }
         
         .container {
-            width: 100%; /* Ensures it takes full width on small screens */
-            max-width: 500px; /* Limits width on larger screens */
+            width: 100%;
+            max-width: 500px;
             background-color: #fff;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            border: 4px solid #1d5e38; /* Original green border matching header color */
-            box-shadow: 0 10px 30px rgba(29, 94, 56, 0.15); /* Original subtle green shadow */
+            border: 4px solid #1d5e38;
+            box-shadow: 0 10px 30px rgba(29, 94, 56, 0.15);
         }
         
         .header {
-            background: linear-gradient(to right, #1d5e38, #2e8b57); /* Original green gradient */
+            background: linear-gradient(to right, #1d5e38, #2e8b57);
             padding: 25px;
             text-align: center;
             position: relative;
@@ -111,11 +111,11 @@
             font-size: 1.2rem;
         }
 
-        /* Info Button (New) */
+        /* Info Button */
         .info-btn {
             position: absolute;
             top: 20px;
-            left: 20px; /* Positioned on the left */
+            left: 20px;
             background: rgba(255, 255, 255, 0.2);
             border: none;
             width: 40px;
@@ -142,9 +142,9 @@
         .letter-selectors {
             display: flex;
             justify-content: center;
-            gap: 15px; /* Space between letter wheels */
+            gap: 15px;
             padding: 20px;
-            background: #f8f9fa; /* Original off-white background */
+            background: #f8f9fa;
         }
         
         .letter-selector {
@@ -156,33 +156,33 @@
         
         .letter-label {
             font-size: 1.2rem;
-            color: #1a472a; /* Original darker green text */
+            color: #1a472a;
             margin-bottom: 15px;
             font-weight: 600;
-            font-family: 'Droid Arabic Naskh', 'Noto Naskh Arabic', serif; /* Changed font */
+            font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;
         }
         
         .letter-wheel {
             position: relative;
-            height: 150px;
+            height: 180px; /* Increased height of the scrolling box */
             width: 100px; /* Retained width */
             overflow: hidden;
             border-radius: 15px;
             background: white;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            border: 2px solid #d4e8da; /* Original lighter green border */
+            border: 2px solid #d4e8da;
         }
         
         .letter-option {
             position: absolute;
             width: 100%;
-            height: 50px; /* Height of each letter option */
+            height: 60px; /* Increased height of each letter option */
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 2.5rem;
-            font-family: 'Droid Arabic Naskh', 'Noto Naskh Arabic', serif; /* Changed font */
-            color: #1a472a; /* Original darker green text */
+            font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;
+            color: #1a472a;
             transition: all 0.1s ease-out; /* Faster transition for smoother scroll */
             opacity: 0.3;
             transform: scale(0.8);
@@ -201,7 +201,7 @@
             z-index: 3;
             font-weight: bold;
             font-size: 3rem;
-            color: #1a472a; /* Original darker green text */
+            color: #1a472a;
         }
         
         .letter-option.next {
@@ -212,19 +212,19 @@
         /* Root Word Display */
         .root-display {
             padding: 15px;
-            background: #fff; /* Changed to white */
+            background: #fff; /* White background for highlight */
             text-align: center;
-            border-top: 1px solid #d4e8da; /* Original lighter green border */
-            border-bottom: 1px solid #d4e8da; /* Original lighter green border */
+            border-top: 1px solid #d4e8da;
+            border-bottom: 1px solid #d4e8da;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for highlight */
-            margin: 0 20px; /* Add some horizontal margin */
+            margin: 0 20px; /* Horizontal margin */
             border-radius: 10px; /* Rounded corners */
         }
         
         .root-word {
             font-size: 3.5rem;
-            font-family: 'Droid Arabic Naskh', 'Noto Naskh Arabic', serif; /* Changed font */
-            color: #1a472a; /* Original darker green text */
+            font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;
+            color: #1a472a;
             font-weight: bold;
             height: 80px;
             display: flex;
@@ -234,17 +234,17 @@
         
         /* Search and Dictionary Buttons */
         .controls {
-            display: flex; /* Use flexbox for buttons */
-            justify-content: space-around; /* Space them out evenly */
-            gap: 10px; /* Gap between buttons */
+            display: flex;
+            justify-content: space-around;
+            gap: 10px;
             padding: 15px 20px 10px;
-            background: #f8f9fa; /* Original off-white background */
+            background: #f8f9fa;
         }
         
         #searchBtn, #dictionaryBtn {
-            flex: 1; /* Make buttons take equal space */
-            padding: 16px 20px; /* Adjusted padding */
-            background: #1a472a; /* Original dark green background */
+            flex: 1;
+            padding: 16px 20px;
+            background: #1a472a;
             color: white;
             border: none;
             border-radius: 50px;
@@ -252,51 +252,51 @@
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(26, 71, 42, 0.3); /* Original green shadow */
+            box-shadow: 0 4px 12px rgba(26, 71, 42, 0.3);
             display: inline-flex;
             align-items: center;
-            justify-content: center; /* Center content within button */
+            justify-content: center;
             gap: 10px;
         }
         
         #searchBtn:hover, #dictionaryBtn:hover {
-            background: #2e8b57; /* Original medium green on hover */
+            background: #2e8b57;
             transform: translateY(-2px);
         }
 
-        /* Verb Forms Display */
+        /* Verb Forms Display - 2x2 Grid */
         .verb-forms {
             display: flex;
-            flex-wrap: wrap; /* Allows items to wrap to next line on small screens */
+            flex-wrap: wrap;
             padding: 15px;
-            background: #f8f9fa; /* Original off-white background */
+            background: #f8f9fa;
             gap: 12px;
             justify-content: center;
             margin-top: -5px;
         }
         
         .verb-form {
-            flex: 1; /* Allows flex items to grow and shrink */
-            min-width: 200px; /* Base minimum width */
+            flex: 0 0 calc(50% - 6px);
+            min-width: 180px;
             background: white;
             border-radius: 15px;
             padding: 18px;
             text-align: center;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
-            border: 2px solid #d4e8da; /* Original lighter green border */
+            border: 2px solid #d4e8da;
         }
         
         .verb-title {
             font-size: 1rem;
-            color: #1a472a; /* Original darker green text */
+            color: #1a472a;
             margin-bottom: 12px;
             font-weight: 600;
         }
         
         .verb-word {
             font-size: 2.2rem;
-            font-family: 'Droid Arabic Naskh', 'Noto Naskh Arabic', serif; /* Changed font */
-            color: #1a472a; /* Original darker green text */
+            font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;
+            color: #1a472a;
             font-weight: bold;
             height: 60px;
             display: flex;
@@ -304,12 +304,29 @@
             align-items: center;
         }
         
-        /* Open Dictionary Button Container (now part of .controls) */
-        .dictionary-btn-container {
-            display: none; /* Hidden as buttons are merged into .controls */
+        /* Footer Links */
+        .footer-links {
+            padding: 15px 20px;
+            background: #f8f9fa;
+            text-align: center;
+            border-top: 1px solid #e6ece8;
+            display: flex;
+            justify-content: center;
+            gap: 40px; /* Increased gap between links */
         }
-        
-        /* Popup Modal */
+
+        .footer-links a {
+            color: #1a472a;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #2e8b57;
+        }
+
+        /* Modals (General) */
         .modal {
             display: none;
             position: fixed;
@@ -326,28 +343,28 @@
         .modal-content {
             background: white;
             border-radius: 20px;
-            width: 90%; /* Takes 90% width of the viewport */
-            max-width: 600px; /* Limits width on larger screens */
-            max-height: 90vh; /* Limits height to prevent overflow on small screens */
-            overflow: auto; /* Enables scrolling if content exceeds height */
+            width: 90%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow: auto;
             position: relative;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
         }
         
         .modal-header {
-            background: linear-gradient(to right, #1a472a, #2e8b57); /* Original green gradient */
+            background: linear-gradient(to right, #1a472a, #2e8b57);
             padding: 20px;
             color: white;
             font-size: 1.5rem;
             font-weight: 600;
             text-align: center;
-            position: sticky; /* Keeps header visible when scrolling modal content */
+            position: sticky;
             top: 0;
             z-index: 10;
         }
         
         .modal-body {
-            padding: 30px; /* Base padding for modal content */
+            padding: 30px;
             font-size: 1.1rem;
             line-height: 1.6;
         }
@@ -367,7 +384,7 @@
         .video-container {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio for video */
+            padding-bottom: 56.25%;
             background: #000;
         }
         
@@ -388,7 +405,7 @@
         .video-placeholder i {
             font-size: 4rem;
             margin-bottom: 20px;
-            color: #2e8b57; /* Original medium green icon */
+            color: #2e8b57;
         }
         
         .video-placeholder p {
@@ -397,7 +414,7 @@
             max-width: 80%;
         }
 
-        /* Info Modal Specific Styles (New) */
+        /* Info Modal Specific Styles */
         .info-modal-image {
             max-width: 100%;
             height: auto;
@@ -426,147 +443,122 @@
         .info-modal-text a:hover {
             text-decoration: underline;
         }
-
-        /* Footer Links */
-        .footer-links {
-            padding: 15px 20px;
-            background: #f8f9fa; /* Original off-white background */
-            text-align: center;
-            border-top: 1px solid #e6ece8; /* Original lighter border */
-            display: flex; /* Use flexbox for spacing */
-            justify-content: center;
-            gap: 30px; /* Increased gap between links */
-        }
-
-        .footer-links a {
-            color: #1a472a; /* Original darker green link color */
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: #2e8b57; /* Original medium green on hover */
-        }
         
         /* Mobile Responsiveness: Styles applied when screen width is 480px or less */
         @media (max-width: 480px) {
             body {
-                padding: 10px; /* Reduce overall padding on very small screens */
+                padding: 10px;
             }
 
             /* Header adjustments */
             .header {
-                padding: 15px; /* Reduced header padding */
+                padding: 15px;
             }
             .app-title {
-                font-size: 1.5rem; /* Smaller title font */
+                font-size: 1.5rem;
             }
             .app-subtitle {
-                font-size: 0.85rem; /* Smaller subtitle font */
+                font-size: 0.85rem;
             }
             .app-description {
-                font-size: 0.8rem; /* Smaller description font */
+                font-size: 0.8rem;
             }
             
-            /* Button adjustments in header */
+            /* Header button adjustments */
             .video-btn, .info-btn {
                 width: 35px;
                 height: 35px;
                 top: 10px;
-                right: 10px; /* Adjusted position */
+                right: 10px;
             }
             .info-btn {
-                left: 10px; /* Adjusted position */
+                left: 10px;
             }
 
             .letter-selectors {
-                gap: 8px; /* Reduce gap between letter wheels */
-                padding: 15px 10px; /* Adjust padding for selectors container */
+                gap: 8px;
+                padding: 15px 10px;
             }
             
             .letter-selector {
-                width: 100px; /* Retained previous adjustment */
+                width: 100px;
             }
             
             .letter-wheel {
-                width: 90px; /* Retained previous adjustment */
-                height: 130px; /* Adjusted height for mobile letter wheels */
+                height: 150px; /* Adjusted height for mobile */
+                width: 90px;
             }
             
             .letter-option {
-                height: 43px; /* Adjusted height of each letter option */
-                font-size: 2rem; /* Smaller font for options */
+                height: 50px; /* Adjusted height for mobile */
+                font-size: 2rem;
             }
             
             .letter-option.selected {
-                font-size: 2.5rem; /* Smaller font for selected option */
+                font-size: 2.5rem;
             }
             
             .letter-label {
-                font-size: 1.1rem; /* Smaller font for labels */
+                font-size: 1.1rem;
             }
             
             /* Root word display adjustments */
             .root-display {
-                padding: 10px; /* Reduced padding */
-                margin: 0 10px; /* Reduced horizontal margin */
+                padding: 10px;
+                margin: 0 10px;
             }
             .root-word {
-                font-size: 2.2rem; /* Smaller font for root word display */
-                height: 50px; /* Reduced height */
+                font-size: 2.2rem;
+                height: 50px;
             }
             
             /* Button adjustments */
             .controls {
-                padding: 10px; /* Reduced padding for button container */
-                gap: 8px; /* Reduced gap between buttons */
+                padding: 10px;
+                gap: 8px;
             }
             #searchBtn, #dictionaryBtn {
-                padding: 12px 15px; /* Reduced padding for buttons */
-                font-size: 1rem; /* Smaller font for buttons */
+                padding: 12px 15px;
+                font-size: 1rem;
             }
 
-            /* Verb Forms Display (Results) adjustments */
+            /* Verb Forms Display (Results) adjustments for 2x2 grid */
             .verb-forms {
-                flex-wrap: wrap; /* Allow wrapping for 2x2 grid */
-                overflow-x: hidden; /* Prevent horizontal scrolling */
-                padding: 10px; /* Adjusted padding */
-                gap: 8px; /* Adjusted gap for 2x2 grid */
+                gap: 8px;
+                padding: 10px;
             }
             
             .verb-form {
-                flex: 0 0 calc(50% - 4px); /* Calculate width for 2 columns with 8px gap */
-                min-width: unset; /* Remove min-width to allow flex-basis to control size */
-                padding: 10px; /* Reduced padding for smaller boxes */
+                flex: 0 0 calc(50% - 4px);
+                padding: 10px;
             }
             
             .verb-title {
-                display: none; /* Hide titles */
+                display: none;
             }
             .verb-word {
-                font-size: 1.5rem; /* Smaller font for verb words */
-                height: 40px; /* Reduced height */
+                font-size: 1.5rem;
+                height: 40px;
             }
 
             .modal-body {
-                padding: 20px; /* Reduced padding for modal content on mobile */
-                font-size: 1rem; /* Slightly smaller font for modal content */
+                padding: 20px;
+                font-size: 1rem;
             }
 
             .modal-header {
-                font-size: 1.3rem; /* Smaller header font in modal */
+                font-size: 1.3rem;
                 padding: 15px;
             }
 
             .close-modal {
-                font-size: 1.5rem; /* Smaller close button in modal */
+                font-size: 1.5rem;
                 top: 10px;
                 right: 15px;
             }
 
             .footer-links {
-                gap: 15px; /* Adjust gap for mobile */
+                gap: 20px;
             }
         }
     </style>
@@ -695,7 +687,7 @@
         </div>
     </div>
 
-    <!-- Info Popup Modal (New) -->
+    <!-- Info Popup Modal -->
     <div class="modal" id="infoModal">
         <div class="modal-content">
             <div class="modal-header">
@@ -714,7 +706,7 @@
         </div>
     </div>
 
-    <!-- 4 Huroof Words Popup Modal (New) -->
+    <!-- 4 Huroof Words Popup Modal -->
     <div class="modal" id="fourHuroofModal">
         <div class="modal-content">
             <div class="modal-header">
@@ -728,7 +720,7 @@
         </div>
     </div>
 
-    <!-- Important Notes Popup Modal (New) -->
+    <!-- Important Notes Popup Modal -->
     <div class="modal" id="notesModal">
         <div class="modal-content">
             <div class="modal-header">
@@ -819,8 +811,8 @@
         // Custom dictionary content for specific root words
         const dictionaryContent = {
             "سمع": `
-                <h2 style="font-family: 'Droid Arabic Naskh', 'Noto Naskh Arabic', serif; text-align: right; margin-bottom: 20px;">67- س م ع</h2>
-                <p style="font-family: 'Droid Arabic Naskh', 'Noto Naskh Arabic', serif; font-size: 1.2rem; text-align: right; margin-bottom: 15px;">
+                <h2 style="font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif; text-align: right; margin-bottom: 20px;">67- س م ع</h2>
+                <p style="font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif; font-size: 1.2rem; text-align: right; margin-bottom: 15px;">
                     <strong>يَسْمَعُ</strong> – To hear, to listen, to respond to a call.
                 </p>
                 <p style="text-align: right; margin-bottom: 15px;">
@@ -830,22 +822,22 @@
                     <strong>اسْمَعُوا</strong> – (Al-Baqarah: 93) "And they took the calf (for worship) and listened to it for worship."
                 </p>
                 
-                <p style="font-family: 'Droid Arabic Naskh', 'Noto Naskh Arabic', serif; font-size: 1.2rem; text-align: right; margin-bottom: 15px;">
+                <p style="font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif; font-size: 1.2rem; text-align: right; margin-bottom: 15px;">
                     <strong>سَمِيعٌ</strong> – This is a word for the active participle (اسم الفاعل) from the weight of (فَعِيلٌ). It is used to describe Allah.
                 </p>
                 <p style="text-align: right; margin-bottom: 20px;">
                     <strong>وَاِنَّ اللّهَ سَمِيْعٌ عَلِيْمٌ</strong> – (Al-Baqarah: 127) "And indeed, Allah is All-Hearing, All-Knowing."
                 </p>
                 
-                <p style="font-family: 'Droid Arabic Naskh', 'Noto Naskh Arabic', serif; font-size: 1.2rem; text-align: right; margin-bottom: 15px;">
+                <p style="font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif; font-size: 1.2rem; text-align: right; margin-bottom: 15px;">
                     <strong>سَمَّاعٌ</strong> – This is a superlative form of (سَمِيعٌ). It means one who hears a lot, or someone who is very obedient.
                 </p>
                 <p style="text-align: right; margin-bottom: 20px;">
                     (Al-Tawbah: 47) "And they are spies among you."
                 </p>
                 
-                <h3 style="font-family: 'Droid Arabic Naskh', 'Noto Naskh Arabic', serif; text-align: right; margin-top: 30px; margin-bottom: 15px; color: #1a472a;">بَابُ أَفْعَلَ:</h3>
-                <p style="font-family: 'Droid Arabic Naskh', 'Noto Naskh Arabic', serif; font-size: 1.2rem; text-align: right; margin-bottom: 15px;">
+                <h3 style="font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif; text-align: right; margin-top: 30px; margin-bottom: 15px; color: #1a472a;">بَابُ أَفْعَلَ:</h3>
+                <p style="font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif; font-size: 1.2rem; text-align: right; margin-bottom: 15px;">
                     <strong>أَسْمِعْ</strong> – To make someone hear, to cause to hear.
                 </p>
                 <p style="text-align: right; margin-bottom: 15px;">
@@ -858,7 +850,7 @@
                     <strong>وَمَا أَنْتَ بِمُسْمِعٍ مَنْ فِي الْقُبُورِ</strong> – (Al-Fatir: 22) "And you cannot make those in the graves hear." This means you cannot make them understand or obey.
                 </p>
         
-                <h3 style="font-family: 'Droid Arabic Naskh', 'Noto Naskh Arabic', serif; text-align: right; margin-top: 30px; margin-bottom: 15px; color: #1a472a;">بَابُ تَفَعَّلَ:</h3>
+                <h3 style="font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif; text-align: right; margin-top: 30px; margin-bottom: 15px; color: #1a472a;">بَابُ تَفَعَّلَ:</h3>
                 <p style="text-align: right; margin-bottom: 15px;">
                     <strong>يَسْتَمِعُ</strong> – To listen carefully, to pay attention.
                 </p>
@@ -869,8 +861,8 @@
                     <strong>وَمَا كَانَ اللَّهُ لِيُضِيعَ الْاِسْمَاعَكُمْ</strong> – (Al-Baqarah: 143) "And Allah would not waste your hearing." This means He would not waste your prayers or your obedience.
                 </p>
         
-                <h3 style="font-family: 'Droid Arabic Naskh', 'Noto Naskh Arabic', serif; text-align: right; margin-top: 30px; margin-bottom: 15px; color: #1a472a;">بَابُ افْتَعَلَ:</h3>
-                <p style="font-family: 'Droid Arabic Naskh', 'Noto Naskh Arabic', serif; font-size: 1.2rem; text-align: right; margin-bottom: 15px;">
+                <h3 style="font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif; text-align: right; margin-top: 30px; margin-bottom: 15px; color: #1a472a;">بَابُ افْتَعَلَ:</h3>
+                <p style="font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif; font-size: 1.2rem; text-align: right; margin-bottom: 15px;">
                     <strong>اسْتَمِعْ</strong> – To listen attentively, to seek to hear.
                 </p>
                 <p style="text-align: right; margin-bottom: 15px;">
@@ -1009,7 +1001,7 @@
                 // Fallback for other root words
                 dictionaryModalBody.innerHTML = `
                     <p style="text-align: center; margin-bottom: 20px;">
-                        <strong style="font-size: 1.5rem; color: #1a472a; font-family: 'Droid Arabic Naskh', 'Noto Naskh Arabic', serif;">
+                        <strong style="font-size: 1.5rem; color: #1a472a; font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;">
                             ${rootWord}
                         </strong>
                     </p>
@@ -1037,17 +1029,17 @@
             document.getElementById('videoModal').style.display = 'flex';
         }
 
-        // Open info modal (New)
+        // Open info modal
         function openInfo() {
             document.getElementById('infoModal').style.display = 'flex';
         }
 
-        // Open 4 Huroof modal (New)
+        // Open 4 Huroof modal
         function openFourHuroof() {
             document.getElementById('fourHuroofModal').style.display = 'flex';
         }
 
-        // Open notes modal (New)
+        // Open notes modal
         function openNotes() {
             document.getElementById('notesModal').style.display = 'flex';
         }
@@ -1056,18 +1048,18 @@
         function closeModal() {
             document.getElementById('dictionaryModal').style.display = 'none';
             document.getElementById('videoModal').style.display = 'none';
-            document.getElementById('infoModal').style.display = 'none'; // Close info modal
-            document.getElementById('fourHuroofModal').style.display = 'none'; // Close 4 Huroof modal
-            document.getElementById('notesModal').style.display = 'none'; // Close notes modal
+            document.getElementById('infoModal').style.display = 'none';
+            document.getElementById('fourHuroofModal').style.display = 'none';
+            document.getElementById('notesModal').style.display = 'none';
         }
         
         // Event Listeners
         document.getElementById('searchBtn').addEventListener('click', searchVerb);
         document.getElementById('dictionaryBtn').addEventListener('click', openDictionary);
         document.getElementById('videoBtn').addEventListener('click', openVideo);
-        document.getElementById('infoBtn').addEventListener('click', openInfo); // New info button listener
-        document.getElementById('fourHuroofLink').addEventListener('click', (e) => { e.preventDefault(); openFourHuroof(); }); // New 4 Huroof link listener
-        document.getElementById('notesLink').addEventListener('click', (e) => { e.preventDefault(); openNotes(); }); // New notes link listener
+        document.getElementById('infoBtn').addEventListener('click', openInfo);
+        document.getElementById('fourHuroofLink').addEventListener('click', (e) => { e.preventDefault(); openFourHuroof(); });
+        document.getElementById('notesLink').addEventListener('click', (e) => { e.preventDefault(); openNotes(); });
 
         document.querySelectorAll('.close-modal').forEach(btn => {
             btn.addEventListener('click', closeModal);
