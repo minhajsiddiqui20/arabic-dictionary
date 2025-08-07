@@ -243,7 +243,7 @@
         #searchBtn, #dictionaryBtn {
             flex: 1;
             padding: 16px 20px;
-            background: #364F6B; /* Reverted to Dark Blue/Gray */
+            background: #364F6B; /* Dark Blue/Gray */
             color: white;
             border: none;
             border-radius: 50px;
@@ -259,7 +259,7 @@
         }
         
         #searchBtn:hover, #dictionaryBtn:hover {
-            background: #3FC1C9; /* New Cyan/Teal on hover */
+            background: #3FC1C9; /* Cyan/Teal on hover */
             transform: translateY(-2px);
         }
 
@@ -810,72 +810,202 @@
         
         // Custom dictionary content for specific root words
         const dictionaryContent = {
-            "سمع": `
-                <h2 style="font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif; text-align: right; margin-bottom: 20px;">67- س م ع</h2>
+            // Removed "سمع" from here as it will now load from its own HTML file
+            "فعل": `
+                <h2 style="font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif; text-align: right; margin-bottom: 20px; color: #364F6B;">ف ع ل</h2>
                 <p style="font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif; font-size: 1.2rem; text-align: right; margin-bottom: 15px;">
-                    <strong>يَسْمَعُ</strong> – To hear, to listen, to respond to a call.
+                    <strong>فَعَلَ</strong> – To do, to act, to make. This is a fundamental root in Arabic, often used as a placeholder for any verb.
                 </p>
-                <p style="text-align: right; margin-bottom: 15px;">
-                    <strong>يَسْمَعُونَ</strong> – (Al-Ma'idah: 19) "And we will give a big reward to those who listen to the Lord." This refers to listening to a call or obeying.
-                </p>
-                <p style="text-align: right; margin-bottom: 20px;">
-                    <strong>اسْمَعُوا</strong> – (Al-Baqarah: 93) "And they took the calf (for worship) and listened to it for worship."
-                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                    <div style="flex: 1 1 calc(50% - 5px); border: 1px solid #3FC1C9; border-radius: 8px; padding: 10px; text-align: right; background-color: #fff;">
+                        <strong style="font-family: 'Droid Arabic Naskh', serif; font-size: 1.8rem; color: #364F6B;">فَعَلَ</strong><br>
+                        <span style="font-size: 0.9rem; color: #555;">Past Tense</span>
+                    </div>
+                    <div style="flex: 1 1 calc(50% - 5px); border: 1px solid #3FC1C9; border-radius: 8px; padding: 10px; text-align: right; background-color: #fff;">
+                        <strong style="font-family: 'Droid Arabic Naskh', serif; font-size: 1.8rem; color: #364F6B;">يَفْعَلُ</strong><br>
+                        <span style="font-size: 0.9rem; color: #555;">Present & Future Tense</span>
+                    </div>
+                    <div style="flex: 1 1 calc(50% - 5px); border: 1px solid #3FC1C9; border-radius: 8px; padding: 10px; text-align: right; background-color: #fff;">
+                        <strong style="font-family: 'Droid Arabic Naskh', serif; font-size: 1.8rem; color: #364F6B;">اِفْعَلْ</strong><br>
+                        <span style="font-size: 0.9rem; color: #555;">Imperative</span>
+                    </div>
+                    <div style="flex: 1 1 calc(50% - 5px); border: 1px solid #3FC1C9; border-radius: 8px; padding: 10px; text-align: right; background-color: #fff;">
+                        <strong style="font-family: 'Droid Arabic Naskh', serif; font-size: 1.8rem; color: #364F6B;">فَعْلًا</strong><br>
+                        <span style="font-size: 0.9rem; color: #555;">Verbal Noun (Masdar)</span>
+                    </div>
+                </div>
                 
+                <h3 style="font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif; text-align: right; margin-top: 30px; margin-bottom: 15px; color: #364F6B;">Usage on Different Weights (أوزان):</h3>
+                <p style="text-align: right; margin-bottom: 15px;">
+                    The root **ف-ع-ل** is highly versatile and forms the basis for understanding verb patterns (أوزان) in Arabic. Its meaning changes significantly based on the "weight" or form it takes.
+                </p>
+                <p style="text-align: right; margin-bottom: 15px;">
+                    **Form I (فَعَلَ):** Basic meaning, e.g., **فَعَلَ** (fa'ala) - he did/acted.
+                </p>
+                <p style="text-align: right; margin-bottom: 15px;">
+                    **Form II (فَعَّلَ):** Intensification or causation, e.g., **فَعَّلَ** (fa''ala) - he caused to do, he made active.
+                </p>
+                <p style="text-align: right; margin-bottom: 15px;">
+                    **Form III (فَاعَلَ):** Participation or attempt, e.g., **فَاعَلَ** (fā'ala) - he participated in doing, he tried to do.
+                </p>
+                <p style="text-align: right; margin-bottom: 15px;">
+                    **Form IV (أَفْعَلَ):** Causation or beginning, e.g., **أَفْعَلَ** (af'ala) - he caused to do, he initiated.
+                </p>
+                <p style="text-align: right; margin-bottom: 15px;">
+                    **Form V (تَفَعَّلَ):** Reflexive of Form II, e.g., **تَفَعَّلَ** (tafa''ala) - he did it to himself, he undertook.
+                </p>
+                <p style="text-align: right; margin-bottom: 15px;">
+                    **Form VI (تَفَاعَلَ):** Reciprocal or feigned action, e.g., **تَفَاعَلَ** (tafā'ala) - they did it to each other, he pretended to do.
+                </p>
+                <p style="text-align: right; margin-bottom: 15px;">
+                    **Form VII (اِنْفَعَلَ):** Reflexive of Form I (often passive sense), e.g., **اِنْفَعَلَ** (infa'ala) - it was done, it became affected.
+                </p>
+                <p style="text-align: right; margin-bottom: 15px;">
+                    **Form VIII (اِفْتَعَلَ):** Taking or acquiring, often with an intensive or reflexive meaning, e.g., **اِفْتَعَلَ** (ifta'ala) - he acquired, he undertook.
+                </p>
+                <p style="text-align: right; margin-bottom: 15px;">
+                    **Form IX (اِفْعَلَّ):** Colors or defects, e.g., **اِفْعَلَّ** (if'alla) - it became (color), it became (defect).
+                </p>
+                <p style="text-align: right; margin-bottom: 15px;">
+                    **Form X (اِسْتَفْعَلَ):** Seeking or requesting, e.g., **اِسْتَفْعَلَ** (istaf'ala) - he sought to do, he requested.
+                </p>
+            `,
+            "حمد": `
+                <h2 style="font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif; text-align: right; margin-bottom: 20px; color: #364F6B;">ح م د</h2>
                 <p style="font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif; font-size: 1.2rem; text-align: right; margin-bottom: 15px;">
-                    <strong>سَمِيعٌ</strong> – This is a word for the active participle (اسم الفاعل) from the weight of (فَعِيلٌ). It is used to describe Allah.
+                    <strong>حَمِدَ</strong> – To praise, to laud, to commend. This root is central to the concept of praising Allah (SWT).
                 </p>
-                <p style="text-align: right; margin-bottom: 20px;">
-                    <strong>وَاِنَّ اللّهَ سَمِيْعٌ عَلِيْمٌ</strong> – (Al-Baqarah: 127) "And indeed, Allah is All-Hearing, All-Knowing."
-                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                    <div style="flex: 1 1 calc(50% - 5px); border: 1px solid #3FC1C9; border-radius: 8px; padding: 10px; text-align: right; background-color: #fff;">
+                        <strong style="font-family: 'Droid Arabic Naskh', serif; font-size: 1.8rem; color: #364F6B;">حَمِدَ</strong><br>
+                        <span style="font-size: 0.9rem; color: #555;">Past Tense</span>
+                    </div>
+                    <div style="flex: 1 1 calc(50% - 5px); border: 1px solid #3FC1C9; border-radius: 8px; padding: 10px; text-align: right; background-color: #fff;">
+                        <strong style="font-family: 'Droid Arabic Naskh', serif; font-size: 1.8rem; color: #364F6B;">يَحْمَدُ</strong><br>
+                        <span style="font-size: 0.9rem; color: #555;">Present & Future Tense</span>
+                    </div>
+                    <div style="flex: 1 1 calc(50% - 5px); border: 1px solid #3FC1C9; border-radius: 8px; padding: 10px; text-align: right; background-color: #fff;">
+                        <strong style="font-family: 'Droid Arabic Naskh', serif; font-size: 1.8rem; color: #364F6B;">اِحْمَدْ</strong><br>
+                        <span style="font-size: 0.9rem; color: #555;">Imperative</span>
+                    </div>
+                    <div style="flex: 1 1 calc(50% - 5px); border: 1px solid #3FC1C9; border-radius: 8px; padding: 10px; text-align: right; background-color: #fff;">
+                        <strong style="font-family: 'Droid Arabic Naskh', serif; font-size: 1.8rem; color: #364F6B;">حَمْدًا</strong><br>
+                        <span style="font-size: 0.9rem; color: #555;">Verbal Noun (Masdar)</span>
+                    </div>
+                </div>
                 
+                <h3 style="font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif; text-align: right; margin-top: 30px; margin-bottom: 15px; color: #364F6B;">Usage on Different Weights (أوزان):</h3>
+                <p style="text-align: right; margin-bottom: 15px;">
+                    The root **ح-م-د** primarily conveys the meaning of praise and gratitude.
+                </p>
+                <p style="text-align: right; margin-bottom: 15px;">
+                    **Form I (حَمِدَ):** To praise, to thank. E.g., **الحَمْدُ للهِ** (Alhamdulillah) - All praise is due to Allah.
+                </p>
+                <p style="text-align: right; margin-bottom: 15px;">
+                    **Form II (حَمَّدَ):** To praise excessively or repeatedly. E.g., **تَحْمِيدٌ** (Tahmeed) - uttering praise.
+                </p>
+                <p style="text-align: right; margin-bottom: 15px;">
+                    **Form IV (أَحْمَدَ):** To be praiseworthy, to find something praiseworthy. Also a proper name. E.g., **أَحْمَدُ** (Ahmad) - The most praiseworthy.
+                </p>
+                <p style="text-align: right; margin-bottom: 15px;">
+                    **Form V (تَحَمَّدَ):** To seek praise, to make oneself praiseworthy.
+                </p>
+                <p style="text-align: right; margin-bottom: 15px;">
+                    **Form X (اِسْتَحْمَدَ):** To seek praise or commendation.
+                </p>
+            `,
+            "ذهب": `
+                <h2 style="font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif; text-align: right; margin-bottom: 20px; color: #364F6B;">ذ ه ب</h2>
                 <p style="font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif; font-size: 1.2rem; text-align: right; margin-bottom: 15px;">
-                    <strong>سَمَّاعٌ</strong> – This is a superlative form of (سَمِيعٌ). It means one who hears a lot, or someone who is very obedient.
+                    <strong>ذَهَبَ</strong> – To go, to depart, to pass away. It can also mean to take away or remove.
                 </p>
-                <p style="text-align: right; margin-bottom: 20px;">
-                    (Al-Tawbah: 47) "And they are spies among you."
-                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                    <div style="flex: 1 1 calc(50% - 5px); border: 1px solid #3FC1C9; border-radius: 8px; padding: 10px; text-align: right; background-color: #fff;">
+                        <strong style="font-family: 'Droid Arabic Naskh', serif; font-size: 1.8rem; color: #364F6B;">ذَهَبَ</strong><br>
+                        <span style="font-size: 0.9rem; color: #555;">Past Tense</span>
+                    </div>
+                    <div style="flex: 1 1 calc(50% - 5px); border: 1px solid #3FC1C9; border-radius: 8px; padding: 10px; text-align: right; background-color: #fff;">
+                        <strong style="font-family: 'Droid Arabic Naskh', serif; font-size: 1.8rem; color: #364F6B;">يَذْهَبُ</strong><br>
+                        <span style="font-size: 0.9rem; color: #555;">Present & Future Tense</span>
+                    </div>
+                    <div style="flex: 1 1 calc(50% - 5px); border: 1px solid #3FC1C9; border-radius: 8px; padding: 10px; text-align: right; background-color: #fff;">
+                        <strong style="font-family: 'Droid Arabic Naskh', serif; font-size: 1.8rem; color: #364F6B;">اِذْهَبْ</strong><br>
+                        <span style="font-size: 0.9rem; color: #555;">Imperative</span>
+                    </div>
+                    <div style="flex: 1 1 calc(50% - 5px); border: 1px solid #3FC1C9; border-radius: 8px; padding: 10px; text-align: right; background-color: #fff;">
+                        <strong style="font-family: 'Droid Arabic Naskh', serif; font-size: 1.8rem; color: #364F6B;">ذَهَابًا</strong><br>
+                        <span style="font-size: 0.9rem; color: #555;">Verbal Noun (Masdar)</span>
+                    </div>
+                </div>
                 
-                <h3 style="font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif; text-align: right; margin-top: 30px; margin-bottom: 15px; color: #364F6B;">بَابُ أَفْعَلَ:</h3>
+                <h3 style="font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif; text-align: right; margin-top: 30px; margin-bottom: 15px; color: #364F6B;">Usage on Different Weights (أوزان):</h3>
+                <p style="text-align: right; margin-bottom: 15px;">
+                    The root **ذ-ه-ب** primarily means 'to go' but can convey 'to take away' or 'to remove' in different forms.
+                </p>
+                <p style="text-align: right; margin-bottom: 15px;">
+                    **Form I (ذَهَبَ):** To go, to depart, to pass away. E.g., **ذَهَبَ إِلَى السُّوقِ** (dhahaba ila as-suq) - He went to the market.
+                </p>
+                <p style="text-align: right; margin-bottom: 15px;">
+                    **Form IV (أَذْهَبَ):** To take away, to remove, to cause to go. E.g., **أَذْهَبَ اللهُ هَمَّهُ** (adhhaba Allahu hammahu) - Allah removed his worry.
+                </p>
+                <p style="text-align: right; margin-bottom: 15px;">
+                    **Form V (تَذَهَّبَ):** To become gold (from ذهب meaning gold).
+                </p>
+                <p style="text-align: right; margin-bottom: 15px;">
+                    **Form VIII (اِذْتَهَبَ):** To carry off, to take away.
+                </p>
+            `,
+            "قال": `
+                <h2 style="font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif; text-align: right; margin-bottom: 20px; color: #364F6B;">ق و ل</h2>
                 <p style="font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif; font-size: 1.2rem; text-align: right; margin-bottom: 15px;">
-                    <strong>أَسْمِعْ</strong> – To make someone hear, to cause to hear.
+                    <strong>قَالَ</strong> – To say, to speak, to tell. This is a hollow verb (أجوف) due to the middle weak letter.
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
+                    <div style="flex: 1 1 calc(50% - 5px); border: 1px solid #3FC1C9; border-radius: 8px; padding: 10px; text-align: right; background-color: #fff;">
+                        <strong style="font-family: 'Droid Arabic Naskh', serif; font-size: 1.8rem; color: #364F6B;">قَالَ</strong><br>
+                        <span style="font-size: 0.9rem; color: #555;">Past Tense</span>
+                    </div>
+                    <div style="flex: 1 1 calc(50% - 5px); border: 1px solid #3FC1C9; border-radius: 8px; padding: 10px; text-align: right; background-color: #fff;">
+                        <strong style="font-family: 'Droid Arabic Naskh', serif; font-size: 1.8rem; color: #364F6B;">يَقُولُ</strong><br>
+                        <span style="font-size: 0.9rem; color: #555;">Present & Future Tense</span>
+                    </div>
+                    <div style="flex: 1 1 calc(50% - 5px); border: 1px solid #3FC1C9; border-radius: 8px; padding: 10px; text-align: right; background-color: #fff;">
+                        <strong style="font-family: 'Droid Arabic Naskh', serif; font-size: 1.8rem; color: #364F6B;">قُلْ</strong><br>
+                        <span style="font-size: 0.9rem; color: #555;">Imperative</span>
+                    </div>
+                    <div style="flex: 1 1 calc(50% - 5px); border: 1px solid #3FC1C9; border-radius: 8px; padding: 10px; text-align: right; background-color: #fff;">
+                        <strong style="font-family: 'Droid Arabic Naskh', serif; font-size: 1.8rem; color: #364F6B;">قَوْلًا</strong><br>
+                        <span style="font-size: 0.9rem; color: #555;">Verbal Noun (Masdar)</span>
+                    </div>
+                </div>
+                
+                <h3 style="font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif; text-align: right; margin-top: 30px; margin-bottom: 15px; color: #364F6B;">Usage on Different Weights (أوزان):</h3>
+                <p style="text-align: right; margin-bottom: 15px;">
+                    The root **ق-و-ل** is a common hollow verb (أجوف واوي) and its forms are essential for understanding Arabic speech.
                 </p>
                 <p style="text-align: right; margin-bottom: 15px;">
-                    <strong>وَاِذَا لَا سَمِعَ الْحَقُّ الَّذِيْنَ أَنَزَلْنَا</strong> – (Al-A'raf: 202) "And when those whom We sent down the truth did not hear." This means they did not understand or obey.
-                </p>
-                <p style="text-align: right; margin-bottom: 20px;">
-                    <strong>يُسْمِعُ</strong> – This is the active participle (اسم الفاعل).
-                </p>
-                <p style="text-align: right; margin-bottom: 20px;">
-                    <strong>وَمَا أَنْتَ بِمُسْمِعٍ مَنْ فِي الْقُبُورِ</strong> – (Al-Fatir: 22) "And you cannot make those in the graves hear." This means you cannot make them understand or obey.
-                </p>
-        
-                <h3 style="font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif; text-align: right; margin-top: 30px; margin-bottom: 15px; color: #364F6B;">بَابُ تَفَعَّلَ:</h3>
-                <p style="text-align: right; margin-bottom: 15px;">
-                    <strong>يَسْتَمِعُ</strong> – To listen carefully, to pay attention.
+                    **Form I (قَالَ):** To say, to speak. E.g., **قَالَ اللهُ** (qāla Allahu) - Allah said.
                 </p>
                 <p style="text-align: right; margin-bottom: 15px;">
-                    <strong>اسْتَمِعُوا</strong> – (Al-A'raf: 204) "So listen to it when the Quran is recited." This means to listen carefully and attentively.
-                </p>
-                <p style="text-align: right; margin-bottom: 20px;">
-                    <strong>وَمَا كَانَ اللَّهُ لِيُضِيعَ الْاِسْمَاعَكُمْ</strong> – (Al-Baqarah: 143) "And Allah would not waste your hearing." This means He would not waste your prayers or your obedience.
-                </p>
-        
-                <h3 style="font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif; text-align: right; margin-top: 30px; margin-bottom: 15px; color: #364F6B;">بَابُ افْتَعَلَ:</h3>
-                <p style="font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif; font-size: 1.2rem; text-align: right; margin-bottom: 15px;">
-                    <strong>اسْتَمِعْ</strong> – To listen attentively, to seek to hear.
+                    **Form II (قَوَّلَ):** To make someone say, to attribute a saying to someone.
                 </p>
                 <p style="text-align: right; margin-bottom: 15px;">
-                    <strong>اسْتَمِعُوا</strong> – (Al-A'raf: 204, 18:39) "So listen to it when the Quran is recited." This means to listen carefully and attentively.
-                </p>
-                <p style="text-align: right; margin-bottom: 20px;">
-                    <strong>وَلَوْ كَانُوا خَيْرًا وَلَوْ كَانُوا بَاسْلًا فَلَيَسْمَعُونَ</strong> – (Al-Anfal: 20-21) "And if they were good and brave, they would have listened." This means they would have listened to the Quran and remained silent.
+                    **Form III (قَاوَلَ):** To negotiate, to converse with.
                 </p>
                 <p style="text-align: right; margin-bottom: 15px;">
-                    <strong>اسْمَاعٌ</strong> – This is the active participle (اسم الفاعل).
+                    **Form IV (أَقَالَ):** To dismiss, to cancel (a sale).
                 </p>
-                <p style="text-align: right;">
-                    <strong>فَتَارًا يَا إِسْمَاعُ فَيَصْمِعُونَ</strong> – (Al-Shu'ara: 10-15) "So then, O Ismael, listen, they will hear." This means that one should listen to the advice of the people with sincerity and obedience.
+                <p style="text-align: right; margin-bottom: 15px;">
+                    **Form V (تَقَوَّلَ):** To invent a saying, to fabricate.
+                </p>
+                <p style="text-align: right; margin-bottom: 15px;">
+                    **Form VI (تَقَاوَلَ):** To exchange words, to argue.
+                </p>
+                <p style="text-align: right; margin-bottom: 15px;">
+                    **Form VIII (اِقْتَالَ):** To choose a saying, to select words.
+                </p>
+                <p style="text-align: right; margin-bottom: 15px;">
+                    **Form X (اِسْتَقَالَ):** To resign, to ask for dismissal.
                 </p>
             `
         };
@@ -995,10 +1125,9 @@
             const rootWord = document.getElementById('rootWord').textContent;
             const dictionaryModalBody = document.querySelector('#dictionaryModal .modal-body');
         
-            // Check if a specific HTML file exists for this root word
-            // This assumes your dictionary pages are in a folder named 'dictionary_pages'
-            // and are named like 'سمع.html', 'كتب.html', etc.
-            const specificPageUrl = `dictionary_pages/${rootWord}.html`;
+            // Define the base path for your dictionary pages
+            const basePath = 'dictionary_pages/';
+            const specificPageUrl = `${basePath}${rootWord}.html`;
             
             fetch(specificPageUrl)
                 .then(response => {
