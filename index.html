@@ -18,7 +18,7 @@
         }
         
         body {
-            background: #F5F5F5; /* New White background */
+            background: #f8faf7; /* Original light grey background */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -34,12 +34,12 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            border: 4px solid #364F6B; /* New Dark Blue/Gray border */
-            box-shadow: 0 10px 30px rgba(54, 79, 107, 0.15); /* New subtle shadow based on dark blue */
+            border: 4px solid #1d5e38; /* Original green border */
+            box-shadow: 0 10px 30px rgba(29, 94, 56, 0.15); /* Original subtle green shadow */
         }
         
         .header {
-            background: linear-gradient(to right, #364F6B, #3FC1C9); /* New Dark Blue to Cyan gradient */
+            background: linear-gradient(to right, #1d5e38, #2e8b57); /* Original green gradient */
             padding: 25px;
             text-align: center;
             position: relative;
@@ -144,7 +144,7 @@
             justify-content: center;
             gap: 15px;
             padding: 20px;
-            background: #F5F5F5; /* New White background */
+            background: #f8f9fa; /* Original off-white background */
         }
         
         .letter-selector {
@@ -156,7 +156,7 @@
         
         .letter-label {
             font-size: 1.2rem;
-            color: #364F6B; /* New Dark Blue/Gray text */
+            color: #1a472a; /* Original darker green text */
             margin-bottom: 15px;
             font-weight: 600;
             font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;
@@ -170,7 +170,7 @@
             border-radius: 15px;
             background: white;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            border: 2px solid #3FC1C9; /* New Cyan/Teal border */
+            border: 2px solid #d4e8da; /* Original lighter green border */
         }
         
         .letter-option {
@@ -182,7 +182,7 @@
             align-items: center;
             font-size: 2.5rem;
             font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;
-            color: #364F6B; /* New Dark Blue/Gray text */
+            color: #1a472a; /* Original darker green text */
             transition: all 0.1s ease-out;
             opacity: 0.3;
             transform: scale(0.8);
@@ -201,7 +201,7 @@
             z-index: 3;
             font-weight: bold;
             font-size: 3rem;
-            color: #364F6B; /* New Dark Blue/Gray text */
+            color: #1a472a; /* Original darker green text */
         }
         
         .letter-option.next {
@@ -212,11 +212,10 @@
         /* Root Word Display */
         .root-display {
             padding: 15px;
-            background: #fff;
+            background: #e6f4ea; /* Light green background */
             text-align: center;
-            border-top: 1px solid #3FC1C9; /* New Cyan/Teal border */
-            border-bottom: 1px solid #3FC1C9; /* New Cyan/Teal border */
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 2px solid #1d5e38; /* More prominent green border */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
             margin: 0 20px;
             border-radius: 10px;
         }
@@ -224,7 +223,7 @@
         .root-word {
             font-size: 3.5rem;
             font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;
-            color: #364F6B; /* New Dark Blue/Gray text */
+            color: #1a472a; /* Original darker green text */
             font-weight: bold;
             height: 80px;
             display: flex;
@@ -238,13 +237,13 @@
             justify-content: space-around;
             gap: 10px;
             padding: 15px 20px 10px;
-            background: #F5F5F5; /* New White background */
+            background: #f8f9fa; /* Original off-white background */
         }
         
         #searchBtn, #dictionaryBtn {
             flex: 1;
             padding: 16px 20px;
-            background: #FC5185; /* Changed to Pink/Magenta */
+            background: #1a472a; /* Reverted to Original dark green background */
             color: white;
             border: none;
             border-radius: 50px;
@@ -252,7 +251,7 @@
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(252, 81, 133, 0.3); /* New shadow based on Pink/Magenta */
+            box-shadow: 0 4px 12px rgba(26, 71, 42, 0.3); /* Reverted to Original green shadow */
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -260,7 +259,7 @@
         }
         
         #searchBtn:hover, #dictionaryBtn:hover {
-            background: #E04070; /* Darker Pink/Magenta on hover */
+            background: #2e8b57; /* Reverted to Original medium green on hover */
             transform: translateY(-2px);
         }
 
@@ -269,7 +268,7 @@
             display: flex;
             flex-wrap: wrap;
             padding: 15px;
-            background: #F5F5F5; /* New White background */
+            background: #f8f9fa; /* Original off-white background */
             gap: 12px;
             justify-content: center;
             margin-top: -5px;
@@ -283,12 +282,12 @@
             padding: 18px;
             text-align: center;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
-            border: 2px solid #3FC1C9; /* New Cyan/Teal border */
+            border: 2px solid #d4e8da; /* Original lighter green border */
         }
         
         .verb-title {
             font-size: 1rem;
-            color: #364F6B; /* New Dark Blue/Gray text */
+            color: #1a472a; /* Original darker green text */
             margin-bottom: 12px;
             font-weight: 600;
         }
@@ -296,7 +295,7 @@
         .verb-word {
             font-size: 2.2rem;
             font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;
-            color: #364F6B; /* New Dark Blue/Gray text */
+            color: #1a472a; /* Original darker green text */
             font-weight: bold;
             height: 60px;
             display: flex;
@@ -307,23 +306,23 @@
         /* Footer Links */
         .footer-links {
             padding: 15px 20px;
-            background: #F5F5F5; /* New White background */
+            background: #f8f9fa; /* Original off-white background */
             text-align: center;
-            border-top: 1px solid #3FC1C9; /* New Cyan/Teal border */
+            border-top: 1px solid #e6ece8; /* Original lighter border */
             display: flex;
             justify-content: center;
             gap: 40px;
         }
 
         .footer-links a {
-            color: #364F6B; /* New Dark Blue/Gray link color */
+            color: #1a472a; /* Original darker green link color */
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
 
         .footer-links a:hover {
-            color: #3FC1C9; /* New Cyan/Teal on hover */
+            color: #2e8b57; /* Original medium green on hover */
         }
 
         /* Modals (General) */
@@ -352,7 +351,7 @@
         }
         
         .modal-header {
-            background: linear-gradient(to right, #364F6B, #3FC1C9); /* New Dark Blue to Cyan gradient */
+            background: linear-gradient(to right, #1a472a, #2e8b57); /* Original green gradient */
             padding: 20px;
             color: white;
             font-size: 1.5rem;
@@ -405,7 +404,7 @@
         .video-placeholder i {
             font-size: 4rem;
             margin-bottom: 20px;
-            color: #3FC1C9; /* New Cyan/Teal icon */
+            color: #2e8b57; /* Original medium green icon */
         }
         
         .video-placeholder p {
@@ -435,7 +434,7 @@
         }
 
         .info-modal-text a {
-            color: #364F6B; /* New Dark Blue/Gray link color */
+            color: #1a472a; /* Original darker green link color */
             text-decoration: none;
             font-weight: 600;
         }
@@ -561,8 +560,7 @@
             .footer-links {
                 gap: 20px;
             }
-        }
-    </style>
+        </style>
 </head>
 <body>
     <div class="container">
