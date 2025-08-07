@@ -18,7 +18,7 @@
         }
         
         body {
-            background: #f8faf7;
+            background: #F5F5F5; /* New White background */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -34,12 +34,12 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            border: 4px solid #1d5e38;
-            box-shadow: 0 10px 30px rgba(29, 94, 56, 0.15);
+            border: 4px solid #364F6B; /* New Dark Blue/Gray border */
+            box-shadow: 0 10px 30px rgba(54, 79, 107, 0.15); /* New subtle shadow based on dark blue */
         }
         
         .header {
-            background: linear-gradient(to right, #1d5e38, #2e8b57);
+            background: linear-gradient(to right, #364F6B, #3FC1C9); /* New Dark Blue to Cyan gradient */
             padding: 25px;
             text-align: center;
             position: relative;
@@ -144,7 +144,7 @@
             justify-content: center;
             gap: 15px;
             padding: 20px;
-            background: #f8f9fa;
+            background: #F5F5F5; /* New White background */
         }
         
         .letter-selector {
@@ -156,7 +156,7 @@
         
         .letter-label {
             font-size: 1.2rem;
-            color: #1a472a;
+            color: #364F6B; /* New Dark Blue/Gray text */
             margin-bottom: 15px;
             font-weight: 600;
             font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;
@@ -164,25 +164,25 @@
         
         .letter-wheel {
             position: relative;
-            height: 180px; /* Increased height of the scrolling box */
+            height: 180px;
             width: 100px;
             overflow: hidden;
             border-radius: 15px;
             background: white;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            border: 2px solid #d4e8da;
+            border: 2px solid #3FC1C9; /* New Cyan/Teal border */
         }
         
         .letter-option {
             position: absolute;
             width: 100%;
-            height: 60px; /* Increased height of each letter option */
+            height: 60px;
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 2.5rem;
             font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;
-            color: #1a472a;
+            color: #364F6B; /* New Dark Blue/Gray text */
             transition: all 0.1s ease-out;
             opacity: 0.3;
             transform: scale(0.8);
@@ -201,7 +201,7 @@
             z-index: 3;
             font-weight: bold;
             font-size: 3rem;
-            color: #1a472a;
+            color: #364F6B; /* New Dark Blue/Gray text */
         }
         
         .letter-option.next {
@@ -214,8 +214,8 @@
             padding: 15px;
             background: #fff;
             text-align: center;
-            border-top: 1px solid #d4e8da;
-            border-bottom: 1px solid #d4e8da;
+            border-top: 1px solid #3FC1C9; /* New Cyan/Teal border */
+            border-bottom: 1px solid #3FC1C9; /* New Cyan/Teal border */
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
             margin: 0 20px;
             border-radius: 10px;
@@ -224,7 +224,7 @@
         .root-word {
             font-size: 3.5rem;
             font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;
-            color: #1a472a;
+            color: #364F6B; /* New Dark Blue/Gray text */
             font-weight: bold;
             height: 80px;
             display: flex;
@@ -238,13 +238,13 @@
             justify-content: space-around;
             gap: 10px;
             padding: 15px 20px 10px;
-            background: #f8f9fa;
+            background: #F5F5F5; /* New White background */
         }
         
         #searchBtn, #dictionaryBtn {
             flex: 1;
             padding: 16px 20px;
-            background: #1a472a;
+            background: #364F6B; /* New Dark Blue/Gray background */
             color: white;
             border: none;
             border-radius: 50px;
@@ -252,7 +252,7 @@
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(26, 71, 42, 0.3);
+            box-shadow: 0 4px 12px rgba(54, 79, 107, 0.3); /* New shadow */
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -260,7 +260,7 @@
         }
         
         #searchBtn:hover, #dictionaryBtn:hover {
-            background: #2e8b57;
+            background: #3FC1C9; /* New Cyan/Teal on hover */
             transform: translateY(-2px);
         }
 
@@ -269,26 +269,26 @@
             display: flex;
             flex-wrap: wrap;
             padding: 15px;
-            background: #f8f9fa;
+            background: #F5F5F5; /* New White background */
             gap: 12px;
             justify-content: center;
             margin-top: -5px;
         }
         
         .verb-form {
-            flex: 0 0 calc(50% - 6px); /* This ensures 2 boxes per row on larger screens */
+            flex: 0 0 calc(50% - 6px);
             min-width: 180px;
             background: white;
             border-radius: 15px;
             padding: 18px;
             text-align: center;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
-            border: 2px solid #d4e8da;
+            border: 2px solid #3FC1C9; /* New Cyan/Teal border */
         }
         
         .verb-title {
             font-size: 1rem;
-            color: #1a472a;
+            color: #364F6B; /* New Dark Blue/Gray text */
             margin-bottom: 12px;
             font-weight: 600;
         }
@@ -296,7 +296,7 @@
         .verb-word {
             font-size: 2.2rem;
             font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;
-            color: #1a472a;
+            color: #364F6B; /* New Dark Blue/Gray text */
             font-weight: bold;
             height: 60px;
             display: flex;
@@ -307,23 +307,23 @@
         /* Footer Links */
         .footer-links {
             padding: 15px 20px;
-            background: #f8f9fa;
+            background: #F5F5F5; /* New White background */
             text-align: center;
-            border-top: 1px solid #e6ece8;
+            border-top: 1px solid #3FC1C9; /* New Cyan/Teal border */
             display: flex;
             justify-content: center;
-            gap: 40px; /* Increased gap between links */
+            gap: 40px;
         }
 
         .footer-links a {
-            color: #1a472a;
+            color: #364F6B; /* New Dark Blue/Gray link color */
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
 
         .footer-links a:hover {
-            color: #2e8b57;
+            color: #3FC1C9; /* New Cyan/Teal on hover */
         }
 
         /* Modals (General) */
@@ -352,7 +352,7 @@
         }
         
         .modal-header {
-            background: linear-gradient(to right, #1a472a, #2e8b57);
+            background: linear-gradient(to right, #364F6B, #3FC1C9); /* New Dark Blue to Cyan gradient */
             padding: 20px;
             color: white;
             font-size: 1.5rem;
@@ -405,7 +405,7 @@
         .video-placeholder i {
             font-size: 4rem;
             margin-bottom: 20px;
-            color: #2e8b57;
+            color: #3FC1C9; /* New Cyan/Teal icon */
         }
         
         .video-placeholder p {
@@ -435,7 +435,7 @@
         }
 
         .info-modal-text a {
-            color: #1a472a;
+            color: #364F6B; /* New Dark Blue/Gray link color */
             text-decoration: none;
             font-weight: 600;
         }
@@ -485,12 +485,12 @@
             }
             
             .letter-wheel {
-                height: 150px; /* Adjusted height for mobile */
+                height: 150px;
                 width: 90px;
             }
             
             .letter-option {
-                height: 50px; /* Adjusted height for mobile */
+                height: 50px;
                 font-size: 2rem;
             }
             
@@ -524,18 +524,18 @@
 
             /* Verb Forms Display (Results) adjustments for 2x2 grid */
             .verb-forms {
-                gap: 8px; /* Adjusted gap for mobile 2x2 grid */
+                gap: 8px;
                 padding: 10px;
             }
             
             .verb-form {
-                flex: 0 0 calc(50% - 4px); /* This ensures 2 boxes per row on mobile */
-                min-width: unset; /* Allows flex-basis to control width */
+                flex: 0 0 calc(50% - 4px);
+                min-width: unset;
                 padding: 10px;
             }
             
             .verb-title {
-                display: none; /* Hide titles on mobile */
+                display: none;
             }
             .verb-word {
                 font-size: 1.5rem;
