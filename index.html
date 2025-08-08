@@ -168,9 +168,9 @@
             width: 100px;
             overflow: hidden;
             border-radius: 15px;
-            background: white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            border: 2px solid #3FC1C9; /* New Cyan/Teal border */
+            background: transparent; /* Changed to transparent */
+            box-shadow: none; /* Removed shadow */
+            border: none; /* Removed border */
         }
         
         .letter-option {
@@ -184,7 +184,7 @@
             font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;
             color: #364F6B; /* New Dark Blue/Gray text */
             transition: all 0.1s ease-out;
-            opacity: 0.3;
+            opacity: 0.15; /* Faded unselected letters */
             transform: scale(0.8);
             user-select: none;
         }
@@ -197,7 +197,7 @@
         .letter-option.selected {
             top: 50%;
             transform: translateY(-50%) scale(1);
-            opacity: 1;
+            opacity: 1; /* Full opacity for selected */
             z-index: 3;
             font-weight: bold;
             font-size: 3rem;
