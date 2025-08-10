@@ -52,9 +52,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: transparent; /* Changed to transparent */
-            border-radius: 0; /* Removed border-radius */
-            backdrop-filter: none; /* Removed backdrop-filter */
+            background: rgba(255, 255, 255, 0.1); /* Shaded circle background */
+            border-radius: 50%; /* Shaded circle border-radius */
+            backdrop-filter: blur(5px); /* Shaded circle backdrop-filter */
         }
         
         .logo-container img {
@@ -419,7 +419,7 @@
             max-width: 80%; /* Reduced max-width */
             height: auto;
             border-radius: 10px;
-            margin-bottom: 20px;
+            margin: 0 auto 20px; /* Centered image */
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
@@ -574,7 +574,7 @@
                 <i class="fas fa-question"></i>
             </button>
             <div class="logo-container">
-                <a href="https://khuddam.co.nz/" target="_blank"> <!-- Logo made clickable to new tab -->
+                <a href="https://khuddam.co.nz/" target="_blank"> <!-- Logo made clickable -->
                     <img src="https://khuddam.co.nz/images/khuddam-logo-white.png" alt="Logo">
                 </a>
             </div>
@@ -823,7 +823,7 @@
             "عبد": {
                 past: "عَبَدَ",
                 present: "يَعْبُدُ",
-                imperative: "اُعْبُدْ",
+                imperative: "اُعْبُد_ْ",
                 masdar: "عِبَادَةً"
             },
             "صبر": {
@@ -936,7 +936,7 @@
                         <li style="margin-bottom: 15px;">
                             <strong style="color: black;">6 – To know / acknowledge</strong>
                             <p class="arabic-verse" style="margin-top: 5px; font-family: 'Noto Naskh Arabic', serif;">(58:1) قَدْ سَمِعَ ٱللَّهُ قَوْلَ ٱلَّتِي تُجَادِلُكَ فِي زَوْجِهَا وَتَشْتَكِي إِلَى ٱللَّهِ</p>
-                            <p class="english-translation">— God has heard the words of the one who disputes with you concerning her husband and complains to God</p>
+                            <p class="english-translation" style="margin-top: 5px;">— God has heard the words of the one who disputes with you concerning her husband and complains to God</p>
                         </li>
                     </ul>
                 </div>
