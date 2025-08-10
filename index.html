@@ -384,7 +384,7 @@
         .video-container {
             position: relative;
             width: 100%;
-            padding-bottom: 56.25%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio for video */
             background: #000;
         }
         
@@ -413,6 +413,15 @@
             text-align: center;
             max-width: 80%;
         }
+        /* YouTube iframe styling */
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
 
         /* Info Modal Specific Styles */
         .info-modal-image {
@@ -420,6 +429,7 @@
             height: auto;
             border-radius: 10px;
             margin: 0 auto 20px; /* Centered image */
+            display: block; /* Ensures margin auto works for centering */
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
@@ -664,10 +674,8 @@
             </div>
             <div class="modal-body">
                 <div class="video-container">
-                    <div class="video-placeholder">
-                        <i class="fas fa-video"></i>
-                        <p>Video player will be embedded here</p>
-                    </div>
+                    <!-- YouTube video embed -->
+                    <iframe src="https://www.youtube.com/embed/Io2f2PVz0UE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div style="padding: 20px; text-align: center;">
                     <h3>How to Use the Qur'anic Dictionary</h3>
@@ -853,7 +861,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="arabic-text" style="padding: 10px; border: 1px solid #ddd; font-family: 'Droid Arabic Naskh', serif;">سَمِعَ</td>
+                                <td class="arabic-text" style="padding: 10px; border: 1px solid #ddd; font-family: 'Droid Arabic Naskh', serif;">سَمِيعَ</td>
                                 <td style="padding: 10px; border: 1px solid #ddd;">He heard / listened</td>
                             </tr>
                             <tr>
@@ -1096,6 +1104,12 @@
         
         // Open video modal
         function openVideo() {
+            const videoModal = document.getElementById('videoModal');
+            const videoContainer = videoModal.querySelector('.video-container');
+            // Embed the YouTube video iframe
+            videoContainer.innerHTML = `
+                <iframe src="https://www.youtube.com/embed/Io2f2PVz0UE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            `;
             document.getElementById('videoModal').style.display = 'flex';
         }
 
@@ -1118,6 +1132,11 @@
         function closeModal() {
             document.getElementById('dictionaryModal').style.display = 'none';
             document.getElementById('videoModal').style.display = 'none';
+            // Stop YouTube video when modal closes
+            const videoIframe = document.querySelector('#videoModal .video-container iframe');
+            if (videoIframe) {
+                videoIframe.src = videoIframe.src; // Reloads the iframe, effectively stopping the video
+            }
             document.getElementById('infoModal').style.display = 'none';
             document.getElementById('fourHuroofModal').style.display = 'none';
             document.getElementById('notesModal').style.display = 'none';
