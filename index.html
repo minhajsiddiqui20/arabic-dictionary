@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Qur'anic Dictionary</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Droid Arabic Naskh font import -->
     <link href="https://fonts.googleapis.com/css2?family=Droid+Arabic+Naskh:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -16,7 +15,7 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
-        
+
         body {
             background: #F5F5F5; /* New White background */
             display: flex;
@@ -26,7 +25,7 @@
             padding: 20px;
             color: #333;
         }
-        
+
         .container {
             width: 100%;
             max-width: 500px;
@@ -37,14 +36,14 @@
             border: 4px solid #deae35; /* Gold border */
             box-shadow: 0 10px 30px rgba(222, 174, 53, 0.15); /* Subtle gold shadow */
         }
-        
+
         .header {
             background: black; /* Solid Black background */
             padding: 25px;
             text-align: center;
             position: relative;
         }
-        
+
         .logo-container {
             width: 60px;
             height: 60px;
@@ -56,13 +55,13 @@
             border-radius: 0; /* Removed border-radius */
             backdrop-filter: none; /* Removed backdrop-filter */
         }
-        
+
         .logo-container img {
             width: 40px;
             height: 40px;
             object-fit: contain;
         }
-        
+
         .app-title {
             font-size: 1.8rem;
             font-weight: 700;
@@ -70,7 +69,7 @@
             margin-bottom: 5px;
             letter-spacing: 0.5px;
         }
-        
+
         .app-subtitle {
             font-size: 1rem;
             color: white; /* White text */
@@ -83,7 +82,7 @@
             margin-top: 10px;
             line-height: 1.4;
         }
-        
+
         /* Video Button */
         .video-btn {
             position: absolute;
@@ -100,12 +99,12 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        
+
         .video-btn:hover {
             background: #a8812a; /* Darker gold on hover */
             transform: scale(1.1);
         }
-        
+
         .video-btn i {
             color: white; /* White icon */
             font-size: 1.2rem;
@@ -127,17 +126,17 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        
+
         .info-btn:hover {
             background: #a8812a; /* Darker gold on hover */
             transform: scale(1.1);
         }
-        
+
         .info-btn i {
             color: white; /* White icon */
             font-size: 1.2rem;
         }
-        
+
         /* Arabic Letter Selectors */
         .letter-selectors {
             display: flex;
@@ -146,14 +145,14 @@
             padding: 20px;
             background: #F5F5F5; /* White background */
         }
-        
+
         .letter-selector {
             display: flex;
             flex-direction: column;
             align-items: center;
             width: 120px;
         }
-        
+
         .letter-label {
             font-size: 1.2rem;
             color: black; /* Black text */
@@ -161,7 +160,7 @@
             font-weight: 600;
             font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;
         }
-        
+
         .letter-wheel {
             position: relative;
             height: 180px;
@@ -172,7 +171,7 @@
             box-shadow: none; /* Removed shadow */
             border: none; /* Removed border */
         }
-        
+
         .letter-option {
             position: absolute;
             width: 100%;
@@ -188,12 +187,12 @@
             transform: scale(0.8);
             user-select: none;
         }
-        
+
         .letter-option.prev {
             top: 0;
             z-index: 1;
         }
-        
+
         .letter-option.selected {
             top: 50%;
             transform: translateY(-50%) scale(1);
@@ -203,12 +202,12 @@
             font-size: 3rem;
             color: black; /* Black text */
         }
-        
+
         .letter-option.next {
             bottom: 0;
             z-index: 1;
         }
-        
+
         /* Root Word Display */
         .root-display {
             padding: 15px;
@@ -219,7 +218,7 @@
             margin: 0 20px;
             border-radius: 10px;
         }
-        
+
         .root-word {
             font-size: 3.5rem;
             font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;
@@ -230,7 +229,7 @@
             justify-content: center;
             align-items: center;
         }
-        
+
         /* Search and Dictionary Buttons */
         .controls {
             display: flex;
@@ -239,7 +238,7 @@
             padding: 15px 20px 10px;
             background: #F5F5F5; /* White background */
         }
-        
+
         #searchBtn, #dictionaryBtn {
             flex: 1;
             padding: 16px 20px;
@@ -257,7 +256,7 @@
             justify-content: center;
             gap: 10px;
         }
-        
+
         #searchBtn:hover, #dictionaryBtn:hover {
             background: #a8812a; /* Darker gold on hover */
             transform: translateY(-2px);
@@ -273,7 +272,7 @@
             justify-content: center;
             margin-top: -5px;
         }
-        
+
         .verb-form {
             flex: 0 0 calc(50% - 6px);
             min-width: 180px;
@@ -284,14 +283,14 @@
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
             border: 2px solid #deae35; /* Gold border */
         }
-        
+
         .verb-title {
             font-size: 1rem;
             color: black; /* Black text */
             margin-bottom: 12px;
             font-weight: 600;
         }
-        
+
         .verb-word {
             font-size: 2.2rem;
             font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;
@@ -302,7 +301,7 @@
             justify-content: center;
             align-items: center;
         }
-        
+
         /* Footer Links */
         .footer-links {
             padding: 15px 20px;
@@ -338,7 +337,7 @@
             justify-content: center;
             align-items: center;
         }
-        
+
         .modal-content {
             background: white;
             border-radius: 20px;
@@ -350,7 +349,7 @@
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
             border: 2px solid #deae35; /* Gold border added to modal content */
         }
-        
+
         .modal-header {
             background: black; /* Solid Black background */
             padding: 20px;
@@ -362,13 +361,13 @@
             top: 0;
             z-index: 10;
         }
-        
+
         .modal-body {
             padding: 30px;
             font-size: 1.1rem;
             line-height: 1.6;
         }
-        
+
         .close-modal {
             position: absolute;
             top: 15px;
@@ -379,7 +378,7 @@
             background: none;
             border: none;
         }
-        
+
         /* Video Modal Specific Styles */
         .video-container {
             position: relative;
@@ -387,7 +386,7 @@
             padding-bottom: 56.25%;
             background: #000;
         }
-        
+
         .video-placeholder {
             position: absolute;
             top: 0;
@@ -401,13 +400,13 @@
             color: white;
             background: #222;
         }
-        
+
         .video-placeholder i {
             font-size: 4rem;
             margin-bottom: 20px;
             color: #deae35; /* Gold icon */
         }
-        
+
         .video-placeholder p {
             font-size: 1.2rem;
             text-align: center;
@@ -443,7 +442,7 @@
         .info-modal-text a:hover {
             text-decoration: underline;
         }
-        
+
         /* Mobile Responsiveness: Styles applied when screen width is 480px or less */
         @media (max-width: 480px) {
             body {
@@ -463,7 +462,7 @@
             .app-description {
                 font-size: 0.8rem;
             }
-            
+
             /* Header button adjustments */
             .video-btn, .info-btn {
                 width: 35px;
@@ -479,29 +478,29 @@
                 gap: 8px;
                 padding: 15px 10px;
             }
-            
+
             .letter-selector {
                 width: 100px;
             }
-            
+
             .letter-wheel {
                 height: 150px;
                 width: 90px;
             }
-            
+
             .letter-option {
                 height: 50px;
                 font-size: 2rem;
             }
-            
+
             .letter-option.selected {
                 font-size: 2.5rem;
             }
-            
+
             .letter-label {
                 font-size: 1.1rem;
             }
-            
+
             /* Root word display adjustments */
             .root-display {
                 padding: 10px;
@@ -511,7 +510,7 @@
                 font-size: 2.2rem;
                 height: 50px;
             }
-            
+
             /* Button adjustments */
             .controls {
                 padding: 10px;
@@ -527,13 +526,13 @@
                 gap: 8px;
                 padding: 10px;
             }
-            
+
             .verb-form {
                 flex: 0 0 calc(50% - 4px);
                 min-width: unset;
                 padding: 10px;
             }
-            
+
             .verb-title {
                 display: none;
             }
@@ -574,39 +573,38 @@
                 <i class="fas fa-question"></i>
             </button>
             <div class="logo-container">
-                <a href="https://khuddam.co.nz/"> <!-- Logo made clickable -->
-                    <img src="https://khuddam.co.nz/images/khuddam-logo-white.png" alt="Logo">
+                <a href="https://khuddam.co.nz/"> <img src="https://khuddam.co.nz/images/khuddam-logo-white.png" alt="Logo">
                 </a>
             </div>
             <h1 class="app-title">Digital Qur'anic Dictionary</h1>
             <p class="app-subtitle">By Late Lutfur Rahman Khan Sb</p>
             <p class="app-description">This digital dictionary is free of cost for the purpose of sadaqah-e-jariyah (continuous charity).</p>
         </div>
-        
+
         <div class="letter-selectors">
             <div class="letter-selector">
                 <div class="letter-label">ل كلمة</div>
                 <div class="letter-wheel" id="letter3">
-                    </div>
+                </div>
             </div>
-            
+
             <div class="letter-selector">
                 <div class="letter-label">ع كلمة</div>
                 <div class="letter-wheel" id="letter2">
-                    </div>
+                </div>
             </div>
-            
+
             <div class="letter-selector">
                 <div class="letter-label">ف كلمة</div>
                 <div class="letter-wheel" id="letter1">
-                    </div>
+                </div>
             </div>
         </div>
-        
+
         <div class="root-display">
             <div class="root-word" id="rootWord">فعل</div>
         </div>
-        
+
         <div class="controls">
             <button id="searchBtn">
                 <i class="fas fa-search"></i>
@@ -617,46 +615,45 @@
                 Dictionary
             </button>
         </div>
-        
+
         <div class="verb-forms">
             <div class="verb-form">
                 <div class="verb-title">Past</div>
                 <div class="verb-word" id="pastTense">فَعَلَ</div>
             </div>
-            
+
             <div class="verb-form">
                 <div class="verb-title">Present & Future</div>
                 <div class="verb-word" id="presentTense">يَفْعَلُ</div>
             </div>
-            
+
             <div class="verb-form">
                 <div class="verb-title">Imperative</div>
                 <div class="verb-word" id="imperative">اِفْعَلْ</div>
             </div>
-            
+
             <div class="verb-form">
                 <div class="verb-title">Verbal Noun (Masdar)</div>
                 <div class="verb-word" id="masdar">فَعْلًا</div>
             </div>
         </div>
-        
+
         <div class="footer-links">
             <a href="#" id="fourHuroofLink">Words with 4 Huroof</a>
             <a href="#" id="notesLink">Important Notes</a>
         </div>
     </div>
-    
+
     <div class="modal" id="dictionaryModal">
         <div class="modal-content">
-            <div class="modal-header">
-                Qur'anic Dictionary Entry
+            <div class="modal-header" id="dictionaryModalHeader">
                 <button class="close-modal">&times;</button>
             </div>
             <div class="modal-body">
-                </div>
+            </div>
         </div>
     </div>
-    
+
     <div class="modal" id="videoModal">
         <div class="modal-content">
             <div class="modal-header">
@@ -767,10 +764,10 @@
             'ا', 'ب', 'ت', 'ث', 'ج', 'ح', 'خ', 'د', 'ذ', 'ر', 'ز', 'س',
             'ش', 'ص', 'ض', 'ط', 'ظ', 'ع', 'غ', 'ف', 'ق', 'ك', 'ل', 'م', 'ن', 'ه', 'و', 'ي'
         ];
-        
+
         // Selected letters for each position
         const selectedLetters = [19, 17, 22]; // Indexes for ف, ع, ل initially (فعل)
-        
+
         // Verb database - sample data
         const verbDatabase = {
             "فعل": {
@@ -834,10 +831,142 @@
                 masdar: "صَبْرًا"
             }
         };
-        
-        // dictionaryContent object is now only for fallback if specific HTML file not found
-        const dictionaryContent = {}; // This object will be empty as content is in separate files
-        
+
+        // Custom dictionary content for 'سمع'
+        const dictionaryContent = {
+            "سمع": `
+                <div style="font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; direction: rtl; text-align: right; color: #333;">
+                    <h2 style="font-size: 1.5rem; color: #deae35; margin-bottom: 10px; font-weight: bold; direction: ltr; text-align: left;">1. Core Meaning</h2>
+                    <p>The basic meaning is to hear or to listen.</p>
+                    <p>It can also extend to accepting or paying attention to something heard.</p>
+                    <p>In religious contexts, it can imply obedience after hearing (hearing and then complying).</p>
+                    <br>
+                    <h2 style="font-size: 1.5rem; color: #deae35; margin-bottom: 10px; font-weight: bold; direction: ltr; text-align: left;">2. Common Forms Derived from س م ع</h2>
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 15px; text-align: right; direction: rtl;">
+                        <thead>
+                            <tr style="background-color: #f2f2f2;">
+                                <th style="padding: 10px; border: 1px solid #ddd; font-weight: bold; text-align: center; direction: ltr;">Form / Word</th>
+                                <th style="padding: 10px; border: 1px solid #ddd; font-weight: bold; text-align: right;">Arabic</th>
+                                <th style="padding: 10px; border: 1px solid #ddd; font-weight: bold; text-align: right;">Meaning</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd; direction: ltr; text-align: left;">Past</td>
+                                <td style="padding: 10px; border: 1px solid #ddd; font-family: 'Noto Naskh Arabic', serif; font-size: 1.2rem;">سَمِعَ</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">He heard / listened</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd; direction: ltr; text-align: left;">Present & Future</td>
+                                <td style="padding: 10px; border: 1px solid #ddd; font-family: 'Noto Naskh Arabic', serif; font-size: 1.2rem;">يَسْمَعُ</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">He hears / is hearing / will hear</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd; direction: ltr; text-align: left;">Imperative</td>
+                                <td style="padding: 10px; border: 1px solid #ddd; font-family: 'Noto Naskh Arabic', serif; font-size: 1.2rem;">اِسْمَعْ</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Listen! (command)</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd; direction: ltr; text-align: left;">Masdar (verbal noun)</td>
+                                <td style="padding: 10px; border: 1px solid #ddd; font-family: 'Noto Naskh Arabic', serif; font-size: 1.2rem;">سَمْعٌ</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Hearing (the sense of hearing)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <h2 style="font-size: 1.5rem; color: #deae35; margin-bottom: 10px; font-weight: bold; direction: ltr; text-align: left;">3. Usage of Root Letters in Different Forms</h2>
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 15px; text-align: right; direction: rtl;">
+                        <thead>
+                            <tr style="background-color: #f2f2f2;">
+                                <th style="padding: 10px; border: 1px solid #ddd; font-weight: bold; text-align: right;">Pattern (وَزْن)</th>
+                                <th style="padding: 10px; border: 1px solid #ddd; font-weight: bold; text-align: right;">Example Word</th>
+                                <th style="padding: 10px; border: 1px solid #ddd; font-weight: bold; text-align: right;">Meaning & Explanation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd; font-family: 'Noto Naskh Arabic', serif; font-size: 1.2rem;">فَعِيلٌ</td>
+                                <td style="padding: 10px; border: 1px solid #ddd; font-family: 'Noto Naskh Arabic', serif; font-size: 1.2rem;">سَمِيعٌ</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Active participle meaning “one who hears” or “listener”; also one of the Names of Allah (The All-Hearing).</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd; font-family: 'Noto Naskh Arabic', serif; font-size: 1.2rem;">فَعَّالٌ</td>
+                                <td style="padding: 10px; border: 1px solid #ddd; font-family: 'Noto Naskh Arabic', serif; font-size: 1.2rem;">سَمَّاعٌ</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Intensive form meaning “one who listens attentively” or “very attentive listener”.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd; font-family: 'Noto Naskh Arabic', serif; font-size: 1.2rem;">مَفْعَلٌ</td>
+                                <td style="padding: 10px; border: 1px solid #ddd; font-family: 'Noto Naskh Arabic', serif; font-size: 1.2rem;">مَسْمَعٌ</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">A noun indicating “place of hearing” or “earshot”.</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd; font-family: 'Noto Naskh Arabic', serif; font-size: 1.2rem;">مَفْعُولٌ</td>
+                                <td style="padding: 10px; border: 1px solid #ddd; font-family: 'Noto Naskh Arabic', serif; font-size: 1.2rem;">مَسْمُوعٌ</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Passive participle meaning “heard” or “audible”.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <h2 style="font-size: 1.5rem; color: #deae35; margin-bottom: 10px; font-weight: bold; direction: ltr; text-align: left;">4. Qur’anic Meanings and References</h2>
+                    <ul style="direction: rtl; text-align: right; padding-right: 20px;">
+                        <li style="margin-bottom: 15px;">
+                            <strong>1 – To hear</strong>
+                            <p style="margin-top: 5px; font-family: 'Noto Naskh Arabic', serif;">
+                                (24:16) وَلَوْلَا إِذْ سَمِعْتُمُوهُ قُلْتُمْ مَا يَكُونُ لَنَا أَنْ نَتَكَلَّمَ بِهَذَا
+                                <br>
+                                <span style="font-size: 0.9rem; color: #555;">— if only when you heard it you had said, ‘It is not [proper] for us to speak of this!’</span>
+                            </p>
+                            <p style="margin-top: 5px; font-family: 'Noto Naskh Arabic', serif;">
+                                (2:171) مَا لاَ يَسْمَعُ إِلَّا دُعَاءً وَنِدَاءً
+                                <br>
+                                <span style="font-size: 0.9rem; color: #555;">— a dumb animal [lit. one who hears nothing but a shout and a cry]</span>
+                            </p>
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <strong>2 – [with prep. بـ] To hear of</strong>
+                            <p style="margin-top: 5px; font-family: 'Noto Naskh Arabic', serif;">
+                                (12:31) فَلَمَّا سَمِعَتْ بِمَكْرِهِنَّ أَرْسَلَتْ إِلَيْهِنَّ
+                                <br>
+                                <span style="font-size: 0.9rem; color: #555;">— so when she heard of their malicious talk, she sent for them</span>
+                            </p>
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <strong>3 – To have the faculty of hearing</strong>
+                            <p style="margin-top: 5px; font-family: 'Noto Naskh Arabic', serif;">
+                                (19:42) لِمَ تَعْبُدُ مَا لاَ يَسْمَعُ وَلَا يُبْصِرُ
+                                <br>
+                                <span style="font-size: 0.9rem; color: #555;">— why do you worship something that can neither hear nor see?!</span>
+                            </p>
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <strong>4 – To listen</strong>
+                            <p style="margin-top: 5px; font-family: 'Noto Naskh Arabic', serif;">
+                                (41:26) وَقَالَ الَّذِينَ كَفَرُوا لَا تَسْمَعُوا لِهَذَا الْقُرْءَانِ
+                                <br>
+                                <span style="font-size: 0.9rem; color: #555;">— the disbelievers say, ‘Do not listen to this Qur’an’</span>
+                            </p>
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <strong>5 – To obey / listen to</strong>
+                            <p style="margin-top: 5px; font-family: 'Noto Naskh Arabic', serif;">
+                                (36:25) إِنِّي آمَنتُ بِرَبِّكُمْ فَٱسْمَعُونِ
+                                <br>
+                                <span style="font-size: 0.9rem; color: #555;">— I believe in your Lord, so listen to me / obey me</span>
+                            </p>
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <strong>6 – To know / acknowledge</strong>
+                            <p style="margin-top: 5px; font-family: 'Noto Naskh Arabic', serif;">
+                                (58:1) قَدْ سَمِعَ ٱللَّهُ قَوْلَ ٱلَّتِي تُجَادِلُكَ فِي زَوْجِهَا وَتَشْتَكِي إِلَى ٱللَّهِ
+                                <br>
+                                <span style="font-size: 0.9rem; color: #555;">— God has heard the words of the one who disputes with you concerning her husband and complains to God</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            `
+        };
+
         // Initialize letter selectors
         function initLetterSelectors() {
             for (let i = 1; i <= 3; i++) {
@@ -847,27 +976,27 @@
             updateRootWord();
             searchVerb(); // Call searchVerb initially to display default verb forms
         }
-        
+
         // Update letter selector display
         function updateLetterSelector(position) {
             const container = document.getElementById(`letter${position}`);
             container.innerHTML = '';
-        
+
             const currentIndex = selectedLetters[position - 1];
-        
+
             // Previous letter
             const prevIndex = (currentIndex - 1 + arabicLetters.length) % arabicLetters.length;
             const prevLetter = document.createElement('div');
             prevLetter.className = 'letter-option prev';
             prevLetter.textContent = arabicLetters[prevIndex];
             container.appendChild(prevLetter);
-        
+
             // Selected letter
             const selectedLetter = document.createElement('div');
             selectedLetter.className = 'letter-option selected';
             selectedLetter.textContent = arabicLetters[currentIndex];
             container.appendChild(selectedLetter);
-        
+
             // Next letter
             const nextIndex = (currentIndex + 1) % arabicLetters.length;
             const nextLetter = document.createElement('div');
@@ -875,32 +1004,32 @@
             nextLetter.textContent = arabicLetters[nextIndex];
             container.appendChild(nextLetter);
         }
-        
+
         // Setup scrolling for letter wheels
         function setupScrolling(position) {
             const wheel = document.getElementById(`letter${position}`);
-        
+
             wheel.addEventListener('wheel', (e) => {
                 e.preventDefault(); // Prevent page scroll
                 const direction = e.deltaY > 0 ? 1 : -1; // Determine scroll direction
                 changeLetter(position, direction); // Change one letter at a time
             });
-            
+
             // Touch support for mobile
             let touchStartY = 0;
             let isSwiping = false; // Flag to track if a swipe is in progress
-        
+
             wheel.addEventListener('touchstart', (e) => {
                 touchStartY = e.touches[0].clientY;
                 isSwiping = true; // Set flag when touch starts
             });
-        
+
             wheel.addEventListener('touchmove', (e) => {
                 e.preventDefault(); // Prevent page scroll during touchmove
                 if (!isSwiping) return; // Only process if a swipe might be happening
                 const touchY = e.touches[0].clientY;
                 const swipeDistance = touchY - touchStartY;
-                
+
                 // Trigger change if swipe distance is significant enough for one letter
                 if (Math.abs(swipeDistance) > 30) { // Threshold for a significant swipe (adjust as needed)
                     const direction = swipeDistance > 0 ? -1 : 1; // Invert direction for intuitive swipe (swipe down = next letter)
@@ -908,12 +1037,12 @@
                     touchStartY = touchY; // Reset start for continuous swipe
                 }
             });
-        
+
             wheel.addEventListener('touchend', () => {
                 isSwiping = false; // Reset flag when touch ends
             });
         }
-        
+
         // Change letter in selector
         function changeLetter(position, amount) {
             selectedLetters[position - 1] = (selectedLetters[position - 1] + amount + arabicLetters.length) % arabicLetters.length;
@@ -921,19 +1050,19 @@
             updateRootWord();
             playClickSound(); // Play sound on letter change
         }
-        
+
         // Update root word display
         function updateRootWord() {
             const rootWord = arabicLetters[selectedLetters[0]] +
-                                arabicLetters[selectedLetters[1]] +
-                                arabicLetters[selectedLetters[2]];
+                                     arabicLetters[selectedLetters[1]] +
+                                     arabicLetters[selectedLetters[2]];
             document.getElementById('rootWord').textContent = rootWord;
         }
-        
+
         // Search for verb forms
         function searchVerb() {
             const rootWord = document.getElementById('rootWord').textContent;
-            
+
             if (verbDatabase[rootWord]) {
                 document.getElementById('pastTense').textContent = verbDatabase[rootWord].past;
                 document.getElementById('presentTense').textContent = verbDatabase[rootWord].present;
@@ -947,56 +1076,42 @@
                 document.getElementById('masdar').textContent = '---';
             }
         }
-        
+
         // Open dictionary modal
         function openDictionary() {
             const rootWord = document.getElementById('rootWord').textContent;
-            const dictionaryModalBody = document.querySelector('#dictionaryModal .modal-body');
-        
-            // Define the base path for your dictionary pages
-            const basePath = 'dictionary_pages/';
-            const specificPageUrl = `${basePath}${rootWord}.html`;
-            
-            fetch(specificPageUrl)
-                .then(response => {
-                    if (response.ok) {
-                        // If the specific page exists, redirect to it
-                        window.location.href = specificPageUrl;
-                    } else {
-                        // If the specific page does NOT exist, use the content from dictionaryContent (if available)
-                        // or fall back to the generic placeholder in the modal.
-                        if (dictionaryContent[rootWord]) { // This will now always be false as dictionaryContent is empty
-                            dictionaryModalBody.innerHTML = dictionaryContent[rootWord];
-                        } else {
-                            dictionaryModalBody.innerHTML = `
-                                <p style="text-align: center; margin-bottom: 20px;">
-                                    <strong style="font-size: 1.5rem; color: #364F6B; font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;">
-                                        ${rootWord}
-                                    </strong>
-                                </p>
-                                <p>Detailed content for this root word is not yet available.</p>
-                                <p>Please check back later or contribute to expand the dictionary!</p>
-                            `;
-                        }
-                        // Display the modal if no specific page was found
-                        document.getElementById('dictionaryModal').style.display = 'flex';
-                    }
-                })
-                .catch(error => {
-                    console.error('Error checking dictionary page:', error);
-                    // Fallback to modal if fetch fails due to network or other issues
-                    dictionaryModalBody.innerHTML = `
-                        <p style="text-align: center; margin-bottom: 20px;">
-                            <strong style="font-size: 1.5rem; color: #364F6B; font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;">
-                                ${rootWord}
-                            </strong>
-                        </p>
-                        <p>Could not load dictionary content. Please check your internet connection or try again later.</p>
-                    `;
-                    document.getElementById('dictionaryModal').style.display = 'flex';
-                });
+            const dictionaryModal = document.getElementById('dictionaryModal');
+            const dictionaryModalHeader = document.getElementById('dictionaryModalHeader');
+            const dictionaryModalBody = dictionaryModal.querySelector('.modal-body');
+
+            // Set the modal header to the current root word
+            dictionaryModalHeader.innerHTML = `
+                ${rootWord}
+                <button class="close-modal">&times;</button>
+            `;
+
+            // Check if we have specific content for this root word
+            if (dictionaryContent[rootWord]) {
+                dictionaryModalBody.innerHTML = dictionaryContent[rootWord];
+            } else {
+                // Fallback to the generic placeholder page for other words
+                dictionaryModalBody.innerHTML = `
+                    <p style="text-align: center; margin-bottom: 20px; font-size: 1.2rem;">
+                        Detailed content for this root word is not yet available.
+                    </p>
+                    <p style="text-align: center;">
+                        Please check back later or contribute to expand the dictionary!
+                    </p>
+                `;
+            }
+
+            // Show the modal
+            dictionaryModal.style.display = 'flex';
+
+            // Re-attach close listener for the newly created close button in the header
+            dictionaryModal.querySelector('.close-modal').addEventListener('click', closeModal);
         }
-        
+
         // Open video modal
         function openVideo() {
             document.getElementById('videoModal').style.display = 'flex';
@@ -1016,7 +1131,7 @@
         function openNotes() {
             document.getElementById('notesModal').style.display = 'flex';
         }
-        
+
         // Close modals
         function closeModal() {
             document.getElementById('dictionaryModal').style.display = 'none';
@@ -1025,7 +1140,7 @@
             document.getElementById('fourHuroofModal').style.display = 'none';
             document.getElementById('notesModal').style.display = 'none';
         }
-        
+
         // Event Listeners
         document.getElementById('searchBtn').addEventListener('click', searchVerb);
         document.getElementById('dictionaryBtn').addEventListener('click', openDictionary);
@@ -1037,14 +1152,14 @@
         document.querySelectorAll('.close-modal').forEach(btn => {
             btn.addEventListener('click', closeModal);
         });
-        
+
         // Close modal when clicking outside
         window.addEventListener('click', (e) => {
             if (e.target.classList.contains('modal')) {
                 closeModal();
             }
         });
-        
+
         // Initialize on load
         window.onload = initLetterSelectors;
     </script>
