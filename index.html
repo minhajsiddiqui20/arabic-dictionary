@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Qur'anic Dictionary</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Droid Arabic Naskh font import -->
     <link href="https://fonts.googleapis.com/css2?family=Droid+Arabic+Naskh:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -17,7 +18,7 @@
         }
         
         body {
-            background: #F5F5F5; /* New White background */
+            background: #F5F5F5; /* White background */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -33,12 +34,12 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            border: 4px solid #364F6B; /* New Dark Blue/Gray border */
-            box-shadow: 0 10px 30px rgba(54, 79, 107, 0.15); /* New subtle shadow based on dark blue */
+            border: 4px solid #deae35; /* Gold border */
+            box-shadow: 0 10px 30px rgba(222, 174, 53, 0.15); /* Subtle gold shadow */
         }
         
         .header {
-            background: linear-gradient(to right, #364F6B, #3FC1C9); /* New Dark Blue to Cyan gradient */
+            background: black; /* Solid Black background */
             padding: 25px;
             text-align: center;
             position: relative;
@@ -65,20 +66,20 @@
         .app-title {
             font-size: 1.8rem;
             font-weight: 700;
-            color: white;
+            color: white; /* White text */
             margin-bottom: 5px;
             letter-spacing: 0.5px;
         }
         
         .app-subtitle {
             font-size: 1rem;
-            color: rgba(255, 255, 255, 0.85);
+            color: white; /* White text */
             font-weight: 500;
         }
 
         .app-description {
             font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
+            color: white; /* White text */
             margin-top: 10px;
             line-height: 1.4;
         }
@@ -88,7 +89,7 @@
             position: absolute;
             top: 20px;
             right: 20px;
-            background: rgba(255, 255, 255, 0.2);
+            background: #deae35; /* Gold background */
             border: none;
             width: 40px;
             height: 40px;
@@ -101,12 +102,12 @@
         }
         
         .video-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
+            background: #a8812a; /* Darker gold on hover */
             transform: scale(1.1);
         }
         
         .video-btn i {
-            color: white;
+            color: white; /* White icon */
             font-size: 1.2rem;
         }
 
@@ -115,7 +116,7 @@
             position: absolute;
             top: 20px;
             left: 20px;
-            background: rgba(255, 255, 255, 0.2);
+            background: #deae35; /* Gold background */
             border: none;
             width: 40px;
             height: 40px;
@@ -128,12 +129,12 @@
         }
         
         .info-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
+            background: #a8812a; /* Darker gold on hover */
             transform: scale(1.1);
         }
         
         .info-btn i {
-            color: white;
+            color: white; /* White icon */
             font-size: 1.2rem;
         }
         
@@ -143,7 +144,7 @@
             justify-content: center;
             gap: 15px;
             padding: 20px;
-            background: #F5F5F5; /* New White background */
+            background: #F5F5F5; /* White background */
         }
         
         .letter-selector {
@@ -155,7 +156,7 @@
         
         .letter-label {
             font-size: 1.2rem;
-            color: #364F6B; /* New Dark Blue/Gray text */
+            color: black; /* Black text */
             margin-bottom: 15px;
             font-weight: 600;
             font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;
@@ -169,7 +170,7 @@
             border-radius: 15px;
             background: transparent;
             box-shadow: none;
-            border: none;
+            border: 2px solid #deae35; /* Gold border */
         }
         
         .letter-option {
@@ -181,7 +182,7 @@
             align-items: center;
             font-size: 2.5rem;
             font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;
-            color: #364F6B; /* New Dark Blue/Gray text */
+            color: black; /* Black text */
             transition: all 0.1s ease-out;
             opacity: 0.15;
             transform: scale(0.8);
@@ -200,7 +201,7 @@
             z-index: 3;
             font-weight: bold;
             font-size: 3rem;
-            color: #364F6B; /* New Dark Blue/Gray text */
+            color: black; /* Black text */
         }
         
         .letter-option.next {
@@ -222,7 +223,7 @@
         .root-word {
             font-size: 3.5rem;
             font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;
-            color: #364F6B; /* New Dark Blue/Gray text */
+            color: black; /* Black text */
             font-weight: bold;
             height: 80px;
             display: flex;
@@ -236,21 +237,21 @@
             justify-content: space-around;
             gap: 10px;
             padding: 15px 20px 10px;
-            background: #F5F5F5; /* New White background */
+            background: #F5F5F5; /* White background */
         }
         
         #searchBtn, #dictionaryBtn {
             flex: 1;
             padding: 16px 20px;
-            background: #364F6B; /* Dark Blue/Gray */
-            color: white;
+            background: #deae35; /* Gold background */
+            color: white; /* White text */
             border: none;
             border-radius: 50px;
             font-size: 1.2rem;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(54, 79, 107, 0.3); /* Shadow based on Dark Blue/Gray */
+            box-shadow: 0 4px 12px rgba(222, 174, 53, 0.3); /* Gold shadow */
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -258,7 +259,7 @@
         }
         
         #searchBtn:hover, #dictionaryBtn:hover {
-            background: #3FC1C9; /* Cyan/Teal on hover */
+            background: #a8812a; /* Darker gold on hover */
             transform: translateY(-2px);
         }
 
@@ -267,7 +268,7 @@
             display: flex;
             flex-wrap: wrap;
             padding: 15px;
-            background: #F5F5F5; /* New White background */
+            background: #F5F5F5; /* White background */
             gap: 12px;
             justify-content: center;
             margin-top: -5px;
@@ -281,12 +282,12 @@
             padding: 18px;
             text-align: center;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
-            border: 2px solid #3FC1C9; /* New Cyan/Teal border */
+            border: 2px solid #deae35; /* Gold border */
         }
         
         .verb-title {
             font-size: 1rem;
-            color: #364F6B; /* New Dark Blue/Gray text */
+            color: black; /* Black text */
             margin-bottom: 12px;
             font-weight: 600;
         }
@@ -294,7 +295,7 @@
         .verb-word {
             font-size: 2.2rem;
             font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;
-            color: #364F6B; /* New Dark Blue/Gray text */
+            color: black; /* Black text */
             font-weight: bold;
             height: 60px;
             display: flex;
@@ -305,23 +306,23 @@
         /* Footer Links */
         .footer-links {
             padding: 15px 20px;
-            background: #F5F5F5; /* New White background */
+            background: #F5F5F5; /* White background */
             text-align: center;
-            border-top: 1px solid #3FC1C9; /* New Cyan/Teal border */
+            border-top: 1px solid #deae35; /* Gold border */
             display: flex;
             justify-content: center;
             gap: 40px;
         }
 
         .footer-links a {
-            color: #364F6B; /* New Dark Blue/Gray link color */
+            color: black; /* Black link color */
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
 
         .footer-links a:hover {
-            color: #3FC1C9; /* New Cyan/Teal on hover */
+            color: #deae35; /* Gold on hover */
         }
 
         /* Modals (General) */
@@ -350,9 +351,9 @@
         }
         
         .modal-header {
-            background: linear-gradient(to right, #364F6B, #3FC1C9); /* New Dark Blue to Cyan gradient */
+            background: black; /* Solid Black background */
             padding: 20px;
-            color: white;
+            color: white; /* White text */
             font-size: 1.5rem;
             font-weight: 600;
             text-align: center;
@@ -372,7 +373,7 @@
             top: 15px;
             right: 20px;
             font-size: 1.8rem;
-            color: white;
+            color: white; /* White icon */
             cursor: pointer;
             background: none;
             border: none;
@@ -403,7 +404,7 @@
         .video-placeholder i {
             font-size: 4rem;
             margin-bottom: 20px;
-            color: #3FC1C9; /* New Cyan/Teal icon */
+            color: #deae35; /* Gold icon */
         }
         
         .video-placeholder p {
@@ -433,7 +434,7 @@
         }
 
         .info-modal-text a {
-            color: #364F6B; /* New Dark Blue/Gray link color */
+            color: #deae35; /* Gold link color */
             text-decoration: none;
             font-weight: 600;
         }
@@ -572,7 +573,7 @@
                 <i class="fas fa-question"></i>
             </button>
             <div class="logo-container">
-                <img src="https://khuddam.co.nz/images/old-logo-border.png" alt="Logo">
+                <img src="https://khuddam.co.nz/images/khuddam-logo-white.png" alt="Logo">
             </div>
             <h1 class="app-title">Digital Qur'anic Dictionary</h1>
             <p class="app-subtitle">By Late Lutfur Rahman Khan Sb</p>
@@ -775,7 +776,7 @@
             },
             "خرج": {
                 past: "خَرَجَ",
-                present: "يَخْرُجُ",
+                present: "يَخْرجُ",
                 imperative: "اُخْرُجْ",
                 masdar: "خُرُوجًا"
             },
@@ -840,10 +841,8 @@
         
             wheel.addEventListener('wheel', (e) => {
                 e.preventDefault(); // Prevent page scroll
-                const scrollAmount = Math.round(e.deltaY / 20); // Adjust sensitivity here
-                if (scrollAmount !== 0) {
-                    changeLetter(position, scrollAmount);
-                }
+                const direction = e.deltaY > 0 ? 1 : -1; // Determine scroll direction
+                changeLetter(position, direction); // Change one letter at a time
             });
             
             // Touch support for mobile
@@ -860,10 +859,11 @@
                 if (!isSwiping) return; // Only process if a swipe might be happening
                 const touchY = e.touches[0].clientY;
                 const swipeDistance = touchY - touchStartY;
-                const scrollAmount = Math.round(swipeDistance / 20); // Adjust sensitivity here
                 
-                if (scrollAmount !== 0) {
-                    changeLetter(position, -scrollAmount); // Negative because swiping down is positive deltaY, but moves to next letter (positive index)
+                // Trigger change if swipe distance is significant enough for one letter
+                if (Math.abs(swipeDistance) > 30) { // Threshold for a significant swipe (adjust as needed)
+                    const direction = swipeDistance > 0 ? -1 : 1; // Invert direction for intuitive swipe (swipe down = next letter)
+                    changeLetter(position, direction);
                     touchStartY = touchY; // Reset start for continuous swipe
                 }
             });
@@ -875,7 +875,7 @@
         
         // Change letter in selector
         function changeLetter(position, amount) {
-            selectedLetters[position - 1] = (selectedLetters[position - 1] + amount + arabicLetters.length * Math.abs(amount)) % arabicLetters.length;
+            selectedLetters[position - 1] = (selectedLetters[position - 1] + amount + arabicLetters.length) % arabicLetters.length;
             updateLetterSelector(position);
             updateRootWord();
         }
