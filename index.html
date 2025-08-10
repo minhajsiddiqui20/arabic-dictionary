@@ -18,7 +18,7 @@
         }
         
         body {
-            background: #F5F5F5; /* White background */
+            background: #F5F5F5; /* New White background */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -52,9 +52,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            backdrop-filter: blur(5px);
+            background: transparent; /* Changed to transparent */
+            border-radius: 0; /* Removed border-radius */
+            backdrop-filter: none; /* Removed backdrop-filter */
         }
         
         .logo-container img {
@@ -168,9 +168,9 @@
             width: 100px;
             overflow: hidden;
             border-radius: 15px;
-            background: transparent;
-            box-shadow: none;
-            border: 2px solid #deae35; /* Gold border */
+            background: transparent; /* Removed background */
+            box-shadow: none; /* Removed shadow */
+            border: none; /* Removed border */
         }
         
         .letter-option {
@@ -184,7 +184,7 @@
             font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;
             color: black; /* Black text */
             transition: all 0.1s ease-out;
-            opacity: 0.15;
+            opacity: 0.15; /* Faded unselected letters */
             transform: scale(0.8);
             user-select: none;
         }
@@ -197,7 +197,7 @@
         .letter-option.selected {
             top: 50%;
             transform: translateY(-50%) scale(1);
-            opacity: 1;
+            opacity: 1; /* Full opacity for selected */
             z-index: 3;
             font-weight: bold;
             font-size: 3rem;
@@ -573,7 +573,9 @@
                 <i class="fas fa-question"></i>
             </button>
             <div class="logo-container">
-                <img src="https://khuddam.co.nz/images/khuddam-logo-white.png" alt="Logo">
+                <a href="https://khuddam.co.nz/"> <!-- Logo made clickable -->
+                    <img src="https://khuddam.co.nz/images/khuddam-logo-white.png" alt="Logo">
+                </a>
             </div>
             <h1 class="app-title">Digital Qur'anic Dictionary</h1>
             <p class="app-subtitle">By Late Lutfur Rahman Khan Sb</p>
@@ -683,7 +685,7 @@
                 <button class="close-modal">&times;</button>
             </div>
             <div class="modal-body">
-                <img src="https://raw.githubusercontent.com/minhajsiddiqui20/arabic-dictionary/refs/heads/main/QuranicDictionary.jpg" alt="Quranic Dictionary Cover" class="info-modal-image">
+                <img src="https://khuddam.co.nz/images/QuranicDictionary.jpg" alt="Quranic Dictionary Cover" class="info-modal-image">
                 <p class="info-modal-text">
                     <strong>KHUDDAM-UL-QURAN NZ © 2021</strong><br>
                     This dictionary was written by Lutfur Rahman Sb (late) and published by Al Balagh Foundation, Lahore, Pakistan. For the sake of Allah (SWT), Khuddam-ul-Quran NZ has endeavoured to digitise it for the benefit of all Arabic grammar students, enabling a quick search for the meanings of Qur’anic words. Alhamdulillah. May Allah (SWT) accept our efforts. Ameen.<br>
@@ -721,6 +723,44 @@
     </div>
 
     <script>
+        // AudioContext for click sound
+        let audioContext;
+        let clickBuffer;
+
+        function initAudio() {
+            // Ensure audio context is resumed from a user gesture for browser compatibility
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            if (audioContext.state === 'suspended') {
+                audioContext.resume();
+            }
+
+            // Create a simple click sound (e.g., a short sine wave burst)
+            const duration = 0.05; // seconds
+            const sampleRate = audioContext.sampleRate;
+            const frameCount = sampleRate * duration;
+            clickBuffer = audioContext.createBuffer(1, frameCount, sampleRate);
+            const channelData = clickBuffer.getChannelData(0);
+            const frequency = 880; // Higher pitch for a distinct click
+            for (let i = 0; i < frameCount; i++) {
+                channelData[i] = Math.sin(2 * Math.PI * frequency * (i / sampleRate)) * (1 - (i / frameCount)); // Fade out
+            }
+        }
+
+        function playClickSound() {
+            if (!audioContext || !clickBuffer) {
+                initAudio(); // Initialize audio context and buffer on first play attempt
+            }
+            if (audioContext && clickBuffer) {
+                const source = audioContext.createBufferSource();
+                source.buffer = clickBuffer;
+                source.connect(audioContext.destination);
+                source.start(0);
+            }
+        }
+
+
         // Arabic letters array
         const arabicLetters = [
             'ا', 'ب', 'ت', 'ث', 'ج', 'ح', 'خ', 'د', 'ذ', 'ر', 'ز', 'س',
@@ -878,6 +918,7 @@
             selectedLetters[position - 1] = (selectedLetters[position - 1] + amount + arabicLetters.length) % arabicLetters.length;
             updateLetterSelector(position);
             updateRootWord();
+            playClickSound(); // Play sound on letter change
         }
         
         // Update root word display
