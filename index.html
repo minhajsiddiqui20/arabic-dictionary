@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Qur'anic Dictionary</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Droid Arabic Naskh font import -->
     <link href="https://fonts.googleapis.com/css2?family=Droid+Arabic+Naskh:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -168,9 +167,9 @@
             width: 100px;
             overflow: hidden;
             border-radius: 15px;
-            background: transparent; /* Changed to transparent */
-            box-shadow: none; /* Removed shadow */
-            border: none; /* Removed border */
+            background: transparent;
+            box-shadow: none;
+            border: none;
         }
         
         .letter-option {
@@ -184,7 +183,7 @@
             font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;
             color: #364F6B; /* New Dark Blue/Gray text */
             transition: all 0.1s ease-out;
-            opacity: 0.15; /* Faded unselected letters */
+            opacity: 0.15;
             transform: scale(0.8);
             user-select: none;
         }
@@ -197,7 +196,7 @@
         .letter-option.selected {
             top: 50%;
             transform: translateY(-50%) scale(1);
-            opacity: 1; /* Full opacity for selected */
+            opacity: 1;
             z-index: 3;
             font-weight: bold;
             font-size: 3rem;
@@ -212,10 +211,10 @@
         /* Root Word Display */
         .root-display {
             padding: 15px;
-            background: transparent; /* Removed background */
+            background: transparent;
             text-align: center;
-            border: none; /* Removed border */
-            box-shadow: none; /* Removed shadow */
+            border: none;
+            box-shadow: none;
             margin: 0 20px;
             border-radius: 10px;
         }
@@ -580,36 +579,30 @@
             <p class="app-description">This digital dictionary is free of cost for the purpose of sadaqah-e-jariyah (continuous charity).</p>
         </div>
         
-        <!-- Arabic Letter Selectors - ف كلمة on the right -->
         <div class="letter-selectors">
             <div class="letter-selector">
                 <div class="letter-label">ل كلمة</div>
                 <div class="letter-wheel" id="letter3">
-                    <!-- Letters will be populated by JavaScript -->
-                </div>
+                    </div>
             </div>
             
             <div class="letter-selector">
                 <div class="letter-label">ع كلمة</div>
                 <div class="letter-wheel" id="letter2">
-                    <!-- Letters will be populated by JavaScript -->
-                </div>
+                    </div>
             </div>
             
             <div class="letter-selector">
                 <div class="letter-label">ف كلمة</div>
                 <div class="letter-wheel" id="letter1">
-                    <!-- Letters will be populated by JavaScript -->
-                </div>
+                    </div>
             </div>
         </div>
         
-        <!-- Root Word Display -->
         <div class="root-display">
             <div class="root-word" id="rootWord">فعل</div>
         </div>
         
-        <!-- Search and Dictionary Buttons -->
         <div class="controls">
             <button id="searchBtn">
                 <i class="fas fa-search"></i>
@@ -621,7 +614,6 @@
             </button>
         </div>
         
-        <!-- Verb Forms Display -->
         <div class="verb-forms">
             <div class="verb-form">
                 <div class="verb-title">Past</div>
@@ -644,14 +636,12 @@
             </div>
         </div>
         
-        <!-- Footer Links -->
         <div class="footer-links">
             <a href="#" id="fourHuroofLink">Words with 4 Huroof</a>
             <a href="#" id="notesLink">Important Notes</a>
         </div>
     </div>
     
-    <!-- Dictionary Popup Modal -->
     <div class="modal" id="dictionaryModal">
         <div class="modal-content">
             <div class="modal-header">
@@ -659,12 +649,10 @@
                 <button class="close-modal">&times;</button>
             </div>
             <div class="modal-body">
-                <!-- Content will be populated by JavaScript -->
-            </div>
+                </div>
         </div>
     </div>
     
-    <!-- Video Popup Modal -->
     <div class="modal" id="videoModal">
         <div class="modal-content">
             <div class="modal-header">
@@ -687,7 +675,6 @@
         </div>
     </div>
 
-    <!-- Info Popup Modal -->
     <div class="modal" id="infoModal">
         <div class="modal-content">
             <div class="modal-header">
@@ -706,7 +693,6 @@
         </div>
     </div>
 
-    <!-- 4 Huroof Words Popup Modal -->
     <div class="modal" id="fourHuroofModal">
         <div class="modal-content">
             <div class="modal-header">
@@ -720,7 +706,6 @@
         </div>
     </div>
 
-    <!-- Important Notes Popup Modal -->
     <div class="modal" id="notesModal">
         <div class="modal-content">
             <div class="modal-header">
