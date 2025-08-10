@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Qur'anic Dictionary</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Droid Arabic Naskh font import -->
     <link href="https://fonts.googleapis.com/css2?family=Droid+Arabic+Naskh:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -152,6 +151,7 @@
             flex-direction: column;
             align-items: center;
             width: 120px;
+            position: relative; /* Needed for absolute positioning of input */
         }
         
         .letter-label {
@@ -208,7 +208,28 @@
             bottom: 0;
             z-index: 1;
         }
-        
+
+        /* Input field for manual entry */
+        .letter-input {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 60px;
+            text-align: center;
+            font-size: 3rem;
+            font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;
+            font-weight: bold;
+            color: black;
+            border: 2px solid #deae35;
+            border-radius: 15px;
+            background: white;
+            z-index: 4;
+            display: none; /* Hidden by default */
+            cursor: text;
+        }
+
         /* Root Word Display */
         .root-display {
             padding: 15px;
@@ -229,19 +250,20 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            letter-spacing: 0.5rem; /* Add spacing between letters */
         }
         
         /* Search and Dictionary Buttons */
         .controls {
             display: flex;
-            justify-content: space-around;
+            justify-content: center; /* Center the single button */
             gap: 10px;
             padding: 15px 20px 10px;
             background: #F5F5F5; /* White background */
         }
         
-        #searchBtn, #dictionaryBtn {
-            flex: 1;
+        #dictionaryBtn {
+            flex: 0 1 auto; /* Let the button size naturally */
             padding: 16px 20px;
             background: #deae35; /* Gold background */
             color: white; /* White text */
@@ -258,49 +280,19 @@
             gap: 10px;
         }
         
-        #searchBtn:hover, #dictionaryBtn:hover {
+        #dictionaryBtn:hover {
             background: #a8812a; /* Darker gold on hover */
             transform: translateY(-2px);
         }
+        
+        /* Increased gap between controls and footer */
+        .controls + .footer-links {
+            margin-top: 20px;
+        }
 
-        /* Verb Forms Display - 2x2 Grid */
+        /* Verb Forms Display - REMOVED */
         .verb-forms {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 15px;
-            background: #F5F5F5; /* White background */
-            gap: 12px;
-            justify-content: center;
-            margin-top: -5px;
-        }
-        
-        .verb-form {
-            flex: 0 0 calc(50% - 6px);
-            min-width: 180px;
-            background: white;
-            border-radius: 15px;
-            padding: 18px;
-            text-align: center;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
-            border: 2px solid #deae35; /* Gold border */
-        }
-        
-        .verb-title {
-            font-size: 1rem;
-            color: black; /* Black text */
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-        
-        .verb-word {
-            font-size: 2.2rem;
-            font-family: 'Droid Arabic Naskh', 'Noto Sans Arabic', serif;
-            color: black; /* Black text */
-            font-weight: bold;
-            height: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            display: none;
         }
         
         /* Footer Links */
@@ -454,6 +446,11 @@
             text-decoration: underline;
         }
         
+        /* New styles to increase font size in tables for the modal */
+        #dictionaryModal .modal-body table .arabic-text {
+            font-size: 1.5rem; /* Increased font size for Arabic text in tables */
+        }
+        
         /* Mobile Responsiveness: Styles applied when screen width is 480px or less */
         @media (max-width: 480px) {
             body {
@@ -584,8 +581,7 @@
                 <i class="fas fa-question"></i>
             </button>
             <div class="logo-container">
-                <a href="https://khuddam.co.nz/" target="_blank"> <!-- Logo made clickable -->
-                    <img src="https://khuddam.co.nz/images/khuddam-logo-white.png" alt="Logo">
+                <a href="https://khuddam.co.nz/" target="_blank"> <img src="https://khuddam.co.nz/images/khuddam-logo-white.png" alt="Logo">
                 </a>
             </div>
             <h1 class="app-title">Digital Qur'anic Dictionary</h1>
@@ -595,21 +591,18 @@
         
         <div class="letter-selectors">
             <div class="letter-selector">
-                <div class="letter-label">ل كلمة</div>
-                <div class="letter-wheel" id="letter3">
-                    </div>
+                <div class="letter-label">ف كلمة</div>
+                <div class="letter-wheel" id="letter1"></div>
             </div>
             
             <div class="letter-selector">
                 <div class="letter-label">ع كلمة</div>
-                <div class="letter-wheel" id="letter2">
-                    </div>
+                <div class="letter-wheel" id="letter2"></div>
             </div>
             
             <div class="letter-selector">
-                <div class="letter-label">ف كلمة</div>
-                <div class="letter-wheel" id="letter1">
-                    </div>
+                <div class="letter-label">ل كلمة</div>
+                <div class="letter-wheel" id="letter3"></div>
             </div>
         </div>
         
@@ -659,7 +652,7 @@
     <div class="modal" id="dictionaryModal">
         <div class="modal-content">
             <div class="modal-header" id="dictionaryModalHeader">
-                <button class="close-modal">&times;</button>
+                <button class="close-modal">×</button>
             </div>
             <div class="modal-body">
                 </div>
@@ -670,11 +663,10 @@
         <div class="modal-content">
             <div class="modal-header">
                 Educational Video
-                <button class="close-modal">&times;</button>
+                <button class="close-modal">×</button>
             </div>
             <div class="modal-body">
                 <div class="video-container">
-                    <!-- YouTube video embed -->
                     <iframe src="https://www.youtube.com/embed/Io2f2PVz0UE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <div style="padding: 20px; text-align: center;">
@@ -690,7 +682,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 About This Dictionary
-                <button class="close-modal">&times;</button>
+                <button class="close-modal">×</button>
             </div>
             <div class="modal-body">
                 <img src="https://raw.githubusercontent.com/minhajsiddiqui20/arabic-dictionary/refs/heads/main/QuranicDictionary.jpg" alt="Quranic Dictionary Cover" class="info-modal-image">
@@ -708,7 +700,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 Words with 4 Huroof
-                <button class="close-modal">&times;</button>
+                <button class="close-modal">×</button>
             </div>
             <div class="modal-body">
                 <p>This is a placeholder page for "Words with 4 Huroof".</p>
@@ -721,12 +713,12 @@
         <div class="modal-content">
             <div class="modal-header">
                 Important Notes
-                <button class="close-modal">&times;</button>
+                <button class="close-modal">×</button>
             </div>
             <div class="modal-body">
                 <p>This is a placeholder page for "Important Notes".</p>
                 <p>You can add important information, grammar rules, or usage tips here later.</p>
-            </div>
+            </p>
         </div>
     </div>
 
@@ -1038,8 +1030,8 @@
         // Update root word display
         function updateRootWord() {
             const rootWord = arabicLetters[selectedLetters[0]] +
-                                arabicLetters[selectedLetters[1]] +
-                                arabicLetters[selectedLetters[2]];
+                                     arabicLetters[selectedLetters[1]] +
+                                     arabicLetters[selectedLetters[2]];
             document.getElementById('rootWord').textContent = rootWord;
         }
         
@@ -1071,8 +1063,8 @@
             // Set the modal header to the current root word
             // Note: The close button is dynamically added here.
             dictionaryModalHeader.innerHTML = `
-                ${rootWord.split('').join(' - ')} 
-                <button class="close-modal">&times;</button>
+                ${rootWord.split('').join(' - ')}
+                <button class="close-modal">×</button>
             `;
             // Apply styles to the dynamically created header text
             dictionaryModalHeader.style.fontFamily = "'Droid Arabic Naskh', 'Noto Sans Arabic', serif";
@@ -1087,12 +1079,27 @@
                 dictionaryModalBody.innerHTML = dictionaryContent[rootWord];
             } else {
                 // Fallback to the generic placeholder page for other words
-                dictionaryModalBody.innerHTML = `
-                    <p style="text-align: left; margin-bottom: 20px;">
-                        Detailed content for this root word is not yet available.
-                    </p>
-                    <p style="text-align: left;">Please check back later or contribute to expand the dictionary!</p>
-                `;
+                const basePath = 'dictionary_pages/';
+                const specificPageUrl = `${basePath}${rootWord}.html`;
+
+                fetch(specificPageUrl)
+                    .then(response => {
+                        if (response.ok) {
+                            return response.text();
+                        }
+                        throw new Error('Content not found');
+                    })
+                    .then(htmlContent => {
+                        dictionaryModalBody.innerHTML = htmlContent;
+                    })
+                    .catch(() => {
+                        dictionaryModalBody.innerHTML = `
+                            <p style="text-align: left; margin-bottom: 20px;">
+                                Detailed content for this root word is not yet available.
+                            </p>
+                            <p style="text-align: left;">Please check back later or contribute to expand the dictionary!</p>
+                        `;
+                    });
             }
         
             // Show the modal
